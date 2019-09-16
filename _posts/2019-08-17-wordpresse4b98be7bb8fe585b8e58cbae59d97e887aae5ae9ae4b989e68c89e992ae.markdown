@@ -1,0 +1,421 @@
+---
+author: TiD
+comments: true
+date: 2019-08-17 20:14:49+00:00
+layout: post
+link: https://www.tidnotes.ga/2019/08/wordpress%e4%b9%8b%e7%bb%8f%e5%85%b8%e5%8c%ba%e5%9d%97%e8%87%aa%e5%ae%9a%e4%b9%89%e6%8c%89%e9%92%ae.html
+slug: wordpress%e4%b9%8b%e7%bb%8f%e5%85%b8%e5%8c%ba%e5%9d%97%e8%87%aa%e5%ae%9a%e4%b9%89%e6%8c%89%e9%92%ae
+title: WordPress之经典区块自定义按钮
+wordpress_id: 109
+categories:
+- WordPress使用技巧
+tags:
+- '5.2'
+- Gutenberg（古腾堡）
+- WordPress
+- 自定义按钮
+---
+
+
+
+
+<blockquote>本文为《 [WordPress之代码样式更改](https://www.tidnotes.ga/2019/08/wordpress%E4%B9%8B%E4%BB%A3%E7%A0%81%E6%A0%B7%E5%BC%8F%E6%9B%B4%E6%94%B9.html) 》提供方法四，主要讲述WordPress自定义按钮
+> 
+> _适用于目前最新版的WordPress 5.2.2_ </blockquote>
+
+
+
+
+
+
+
+方法四设置方法：在当前使用的主题根目录下的funtions.php加入下面代码，再在该目录下新增一个名为editor.js的文件，内容如下editor.js。设置完后经典编辑下就有“code代码”和“TAB”按钮，实现插入代码和插入制表符的功能了。
+
+
+
+
+
+
+    
+    <code class="lan language-php">//自定义按钮  在functions.php中添加
+    add_action( 'admin_init', 'my_tinymce_button' );
+    
+    function my_tinymce_button() {     //检查用户权限
+         if ( current_user_can( 'edit_posts' ) && current_user_can( 'edit_pages' ) ) {
+              add_filter( 'mce_buttons', 'my_register_tinymce_button' );
+              add_filter( 'mce_external_plugins', 'my_add_tinymce_button' );
+         }
+    }
+    //在编辑器上注册新按钮
+    function my_register_tinymce_button( $buttons ) {
+         array_push( $buttons, "button_eek", "button_green" );
+         return $buttons;
+    }
+    //声明新按钮脚本
+    function my_add_tinymce_button( $plugin_array ) {
+         $plugin_array['my_button_script'] = get_bloginfo('template_directory') . "/editor.js";  //此处为wp当前使用的主题的根目录，若在其他位置请自行更改
+         return $plugin_array;
+    }</code>
+
+点击复制
+
+
+
+
+
+
+    
+    <code class="lan language-js">//editor.js
+    (function() {
+    	/* Register the buttons */
+    	tinymce.create('tinymce.plugins.MyButtons', {
+    	init : function(ed, url) {
+    		/**
+    		* 定义按钮子菜单
+    		*/
+    		ed.addButton( 'button_eek', {
+    			text: 'code代码',
+    			type: 'menubutton',
+    			menu: [{
+    				text: '非html代码',
+    				onclick: function() {
+    					ed.windowManager.open({
+    						title: '插入非HTML语言代码',
+    						body: [{
+    							type: 'textbox',
+    							name: 'textboxName',
+    							label: '语言',
+    							value: 'python'
+    						},
+    						{
+    							type: 'textbox',
+    							name: 'textboxCode',
+    							label: '代码',
+    							multiline: true,
+    							minWidth: 500,
+    							minHeight: 100,
+    							spellcheck: false
+    						}],
+    						onsubmit: function(e) {
+    							ed.insertContent( '<pre class="line-numbers"><code class="language-' + e.data.textboxName + '">' + ed.dom.encode(e.data.textboxCode) + '</code></pre>');
+    						}
+    					})
+    				}
+    			},
+    			{
+    				text: 'html代码',
+    				onclick: function() {
+    					ed.windowManager.open({
+    						title: '插入HTML代码',
+    						body: [{
+    							type: 'textbox',
+    							name: 'textboxCode',
+    							multiline: true,
+    							minWidth: 500,
+    							minHeight: 100,
+    							spellcheck: false
+    						}],
+    						onsubmit: function(e) {
+    							ed.insertContent( '<pre class="line-numbers"><code class="language-markup">' + ed.dom.encode(e.data.textboxCode) + '</code></pre>');
+    						}
+    					})
+    				}
+    			}]
+    		});
+    		    			
+    		/**
+    		* 定义制表符
+    		*/
+    		ed.addButton( 'button_green', {
+    			text : 'TAB',
+    			title : '插入制表符',
+    			onclick: function() {
+    				ed.selection.setContent('\t');
+    			},
+    		});
+    	},
+    	createControl : function(n, cm) {
+    		return null;
+    	},
+    	});
+    	/* Start the buttons */
+    	tinymce.PluginManager.add( 'my_button_script', tinymce.plugins.MyButtons );
+    })();</code>
+
+点击复制
+
+
+
+
+
+
+
+
+
+#### 效果图
+
+
+
+
+
+![WordPress自定义按钮](https://tidnotes.ga/wp-content/uploads/2019/08/QQ截图20190818025430.png)
+
+
+
+![插入代码窗口——WordPress自定义按钮 | 小TiD笔记](https://tidnotes.ga/wp-content/uploads/2019/08/QQ截图20190818035829.png)
+
+
+
+
+
+
+
+## 功能实现介绍
+
+
+
+
+
+
+
+
+
+####   **PHP代码 - 声明新的MCE插件 **
+
+
+
+
+
+
+
+php代码中，主要是更改 `function my_register_tinymce_button( $buttons )` 函数中的 `array_push( $buttons, "button_1", "button_2" );`。其中button_1、 button_2为按钮名，可自定义，多个按钮名用“,”隔开。
+
+
+
+
+
+
+
+
+
+####  JS代码 - 添加MCE按钮 
+
+
+
+
+
+
+
+#### 
+
+
+
+
+
+
+
+**插入短语**
+
+
+
+
+
+
+button_1为PHP中自定义对应的按钮名，text是按钮显示的名字，title是鼠标悬停在按钮的注释。点击时调用函数`function(){...}`。`ed.selection.setContent('');`在当前插入引号中的内容。
+
+
+
+
+
+    
+    <code class="lan language-js">ed.addButton( 'button_1', {
+    	text : 'Insert shortcode',
+    	title : 'Insert shortcode',
+    	onclick : function() {
+    		ed.selection.setContent('[myshortcode]');
+    	}
+    });</code>
+
+点击复制
+
+
+
+
+
+
+
+**选定内容更改样式**
+
+
+
+
+
+
+cmd调用`button_green_cmd`对应的函数；`ed.selection.getContent()`获取当前选中的内容；return_text为替换成的内容，更改不同的标签实现不同的样式更改。
+
+
+
+
+
+    
+    <code class="lan language-js">ed.addButton( 'button_1', {
+    	text : 'Add span',
+    	title : 'Add span',
+    	cmd: 'button_green_cmd'
+    });
+    ed.addCommand( 'button_green_cmd', function() {
+    	var selected_text = ed.selection.getContent();
+    	var return_text = '';
+    	return_text = '<h1>' + selected_text + '</h1>';
+    	ed.execCommand('mceInsertContent', 0, return_text);
+    });</code>
+
+点击复制
+
+
+
+
+
+
+
+**添加一个按钮子菜单 **
+
+
+
+
+
+
+type为menubutton菜单类型，menu为菜单内容，每一项用text属性命名，onclick点击调用函数，`editor.insertContent('');`也是插入函数。
+
+
+
+
+
+    
+    <code class="lan language-js">editor.addButton( 'my_mce_button', {
+    	text: 'Sample Dropdown',
+    	icon: false,
+    	type: 'menubutton',
+    	menu: [{
+    		text: 'Item 1',
+    		menu: [{
+    			text: 'Sub Item 1',
+    			onclick: function() {
+    				editor.insertContent('WP is awesome!');
+    			}
+    			},
+    			{
+    			text: 'Sub Item 2',
+    			onclick: function() {
+    				editor.insertContent('WP is awesome!');
+    			}
+    			}]
+    		},
+    		{
+    		text: 'Item 2',
+    		menu: [{
+    			text: 'Sub Item 1',
+    			onclick: function() {
+    				editor.insertContent('WP is awesome!');
+    			}
+    			},
+    			{
+    			text: 'Sub Item 2',
+    			onclick: function() {
+    				editor.insertContent('WP is awesome!');
+    			}
+    			}]
+    		}]
+    	});
+    });</code>
+
+点击复制
+
+
+
+
+
+
+
+**添加弹出窗口**
+
+
+
+
+
+
+`ed.windowManager.open({})`为弹出窗口函数，title为窗口名称，body是窗体内容。type为输入框类型；name为属性名，在onsubmit函数中可用`e.data.属性名`获取输入框内容；label为显示的标签名，不需要可去掉；textbox类型中，可选属性mutiline，true表示多行文本框，false表示单行文本框，默认false；value为预设值，为数组时表示下拉选框，如`'value': [ {text: 'Option 1', value: '1'}, {text: 'Option 2', value: '2'}, {text: 'Option 3', value: '3'} ]`，其中text是选框显示内容，value为对应的值。
+
+
+
+
+
+    
+    <code class="lan language-js">ed.addButton( 'button_1', {
+    	text: '非html代码',
+    	onclick: function() {
+    		ed.windowManager.open({
+    			title: '插入非HTML语言代码',
+    			body: [{
+    				type: 'textbox',
+    				name: 'textboxName',
+    				label: '语言',
+    				value: 'python'
+    			},
+    			{
+    				type: 'textbox',
+    				name: 'textboxCode',
+    				label: '代码',
+    				multiline: true,
+    				minWidth: 500,
+    				minHeight: 100,
+    				spellcheck: false
+    			}],
+    			onsubmit: function(e) {
+    				ed.insertContent( '<pre class="line-numbers"><code class="language-' + e.data.textboxName + '">' + ed.dom.encode(e.data.textboxCode) + '</code></pre>');
+    			}
+    		})
+    	}
+    }</code>
+
+点击复制
+
+
+
+
+
+
+
+以上的方法可以嵌套使用，可以根据自己的需求或者风格来编写自己的按钮。
+
+
+
+
+
+
+
+
+* * *
+
+
+
+
+#### 主要参考链接以及代码来源
+
+
+
+
+
+
+  * 
+
+
+[小板邓：wordpress如何扩展TinyMCE编辑器，添加自定义按钮及功能](https://www.cnblogs.com/xbdeng/p/5296557.html)
+
+
+
+
+
+  * [黄聪：TinyMCE 4 增强 添加样式、按钮、字体、下拉菜单和弹出式窗口](https://www.cnblogs.com/huangcong/p/4787867.html)
+
+

@@ -1,0 +1,59 @@
+---
+author: TiD
+comments: true
+date: 2019-08-15 13:26:46+00:00
+layout: post
+link: https://www.tidnotes.ga/2019/08/__trashed.html
+published: false
+slug: __trashed
+title: 你哈
+wordpress_id: 33
+---
+
+
+
+    
+    <code><div style="border:1px solid #ddd;padding:18px 20px;margin:15px 0;border-radius:10px;">
+    <button id="result" onclick="hideAndShow('result')">隐藏结果</button>
+    <div id="result-init" style="display:block;margin-top:10px">
+      <h3>污染城市列表</h3>
+      <ul id="aqi-list">
+      </ul>
+    
+    <script type="text/javascript">
+    var aqiData = [
+      ["北京", 90],
+      ["上海", 50],
+      ["福州", 10],
+      ["广州", 50],
+      ["成都", 90],
+      ["西安", 100]
+    ];
+    
+    (function () {
+      var str="";
+      var pos=["一","二","三","四","五","六"];
+      var outputData=aqiData.filter(function(value){
+          return value[1]>60;
+      }).sort(function(a,b){
+          return b[1]-a[1];
+      });
+      outputData.forEach(function(value,index){
+          str+="<li>第"+pos[index]+"名："+value[0]+"，"+value[1]+"</li>";
+      });
+      document.getElementById("aqi-list").innerHTML=str;
+    })();
+    </script>
+    </div>
+    </div></code>
+
+
+
+
+
+
+
+
+
+
+
