@@ -2,7 +2,7 @@
 title: '小TiD笔记'
 description: '小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问。此为www.tidnotes.ga的备用网站'
 keyword: 'TiD,小tid,小tid笔记,技术,wordpress,前端,js'
-url: 'www.tidnotes.ga' # your host
+url: '//www.tidnotes.ga' # your host
 
 # when build blog on server, if you don't need baseurl, you should leave this value blank.
 # 在服务器上建站时，如果你不需要子域名，请将这一格留空
@@ -56,10 +56,8 @@ postPatterns: 'circuitBoard'
 # SNS settings 配置社交网站
 # url: email, weibo, zhihu, twitter, instagram, juejin, github, douban, facebook, dribble, uicn, jianshu, medium, linkedin
 sns:
-  weibo: '//weibo.com/lovecolcol'
-  juejin: '//juejin.im/user/57a6f434165abd006159b4cc'
-  instagram: '//www.instagram.com/steveliaocn'
-  github: '//github.com/kaeyleo'
+  juejin: '//www.tidnotes.ga'
+  github: '//github.com/Tidra'
 
 # Tags 设置标签
 recommend-tags: true # whether or not display recommend-tags on the sidebar
