@@ -27,7 +27,7 @@ footer:
 author: 'tidra'
 nickname: 'TiD'
 bio: '热爱技术&设计，简单快乐的一个人'
-avatar: ''
+avatar: 'assets/img/profile.jpg'
 
 # Search
 search: true
