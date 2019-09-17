@@ -5,6 +5,7 @@
     <i id="menu-toggle" class="iconfont icon-menu"></i>
     <nav class="g-nav">
         <ul>
+            <li><a href="https://www.tidnotes.ga">主站</a></li>
             {% for i in site.nav %}
             <li><a href="{{ i[1] | relative_url}}">{{ i[0] }}</a></li>
             {% endfor %}
