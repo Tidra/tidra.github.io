@@ -65,9 +65,8 @@ tags:
 
 
 
-
-    
-    <pre><code class="lan language-markup"><!DOCTYPE html>
+'''JavaScript
+    <!DOCTYPE html>
     <html>
       <head>
         <meta charset="utf-8">
@@ -105,7 +104,8 @@ tags:
     
     </script>
     </body>
-    </html></code></pre>
+    </html>
+'''
 
 
 
