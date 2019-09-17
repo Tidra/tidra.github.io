@@ -67,7 +67,7 @@ tags:
 
 
     
-    <code class="lan language-markup"><!DOCTYPE html>
+    <pre><code class="lan language-markup"><!DOCTYPE html>
     <html>
       <head>
         <meta charset="utf-8">
@@ -105,9 +105,8 @@ tags:
     
     </script>
     </body>
-    </html></code>
+    </html></code></pre>
 
-点击复制
 
 
 
@@ -149,9 +148,9 @@ JS数组过滤可以用[Array _filter_() 方法](https://www.runoob.com/jsref/js
 
 
     
-    <code class="lan language-js">aqiData.filter(function(value){
+    <pre><code class="lan language-js">aqiData.filter(function(value){
           return value[1]>60;
-      })</code>
+      })</code></pre>
 
 点击复制
 
@@ -251,7 +250,7 @@ JS数组过滤可以用[Array _filter_() 方法](https://www.runoob.com/jsref/js
 
 
     
-    <code class="language-markup"><!DOCTYPE html>
+    <pre><code class="language-markup"><!DOCTYPE html>
     <html>
       <head>
         <meta charset="utf-8">
@@ -301,9 +300,8 @@ JS数组过滤可以用[Array _filter_() 方法](https://www.runoob.com/jsref/js
     </script>
     </body>
     </html>
-    </code>
+    </code></pre>
 
-点击复制
 
 
 
