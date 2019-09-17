@@ -19,13 +19,13 @@ tags:
 
 
 
-<blockquote>本文内容主要参考 [WordPress大学](https://www.wpdaxue.com/wordpress-gutenberg-block-api-extending-blocks.html) 以及 [Gutenberg 开发API](https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/) ，介绍并解读新版WordPress所采用的 _Gutenberg 编辑器_ _（ Block Editor/块编辑器 ）_如何创建自定义编辑块，包括块的样式以及扩展工具栏等。
+>本文内容主要参考 [WordPress大学](https://www.wpdaxue.com/wordpress-gutenberg-block-api-extending-blocks.html) 以及 [Gutenberg 开发API](https://wordpress.org/gutenberg/handbook/designers-developers/developers/block-api/) ，介绍并解读新版WordPress所采用的 _Gutenberg 编辑器（ Block Editor/块编辑器 ）_ 如何创建自定义编辑块，包括块的样式以及扩展工具栏等。
 > 
 > 本文适用于WordPress 5.2.2。关于WordPress Gutenberg自定义系列目录如下：  
-1、[WordPress之Gutenberg（古腾堡）自定义块（一）](https://www.tidnotes.ga/?p=163)  
-2、[WordPress之Gutenberg（古腾堡）自定义块（二）](https://www.tidnotes.ga/?p=208)  
-3、[WordPress之Gutenberg（古腾堡）自定义块扩展栏](https://www.tidnotes.ga/?p=214)   
-_4、[WordPress之Gutenberg（古腾堡）自定义块工具栏](https://www.tidnotes.ga/?p=238)_  </blockquote>
+>1、[WordPress之Gutenberg（古腾堡）自定义块（一）](https://www.tidnotes.ga/?p=163)  
+>2、[WordPress之Gutenberg（古腾堡）自定义块（二）](https://www.tidnotes.ga/?p=208)  
+>3、[WordPress之Gutenberg（古腾堡）自定义块扩展栏](https://www.tidnotes.ga/?p=214)   
+>4、[WordPress之Gutenberg（古腾堡）自定义块工具栏](https://www.tidnotes.ga/?p=238)
 
 
 
@@ -53,7 +53,7 @@ _4、[WordPress之Gutenberg（古腾堡）自定义块工具栏](https://www.tid
 
 
 
-[![Gutenberg（古腾堡）自定义块扩展栏 | 小TiD笔记](https://www.tidnotes.ga/wp-content/uploads/2019/08/image-1024x326.png)](https://www.tidnotes.ga/wp-content/uploads/2019/08/image.png)
+![Gutenberg（古腾堡）自定义块扩展栏 | 小TiD笔记](https://www.tidnotes.ga/wp-content/uploads/2019/08/image-1024x326.png)](https://www.tidnotes.ga/wp-content/uploads/2019/08/image.png)
 
 
 
@@ -271,7 +271,7 @@ TextControl组件允许用户输入和编辑文本 ，基本属性有：
 
 
 
-[![Gutenberg（古腾堡）文本编辑框 | 小TiD笔记](https://www.tidnotes.ga/wp-content/uploads/2019/08/image-2.png)](https://www.tidnotes.ga/wp-content/uploads/2019/08/image-2.png)
+![Gutenberg（古腾堡）文本编辑框 | 小TiD笔记](https://www.tidnotes.ga/wp-content/uploads/2019/08/image-2.png)](https://www.tidnotes.ga/wp-content/uploads/2019/08/image-2.png)
 
 
 
@@ -288,7 +288,7 @@ RadioControl组件为单选框，基本属性有：
 
 
 
-[![Gutenberg（古腾堡）单选框 | 小TiD笔记](https://www.tidnotes.ga/wp-content/uploads/2019/08/image-3.png)](https://www.tidnotes.ga/wp-content/uploads/2019/08/image-3.png)
+![Gutenberg（古腾堡）单选框 | 小TiD笔记](https://www.tidnotes.ga/wp-content/uploads/2019/08/image-3.png)](https://www.tidnotes.ga/wp-content/uploads/2019/08/image-3.png)
 
 
 
@@ -315,7 +315,7 @@ RadioControl组件为单选框，基本属性有：
 _**WordPress Gutenberg其他相关自定义系列文章：**_  
 _1、_[WordPress之Gutenberg（古腾堡）自定义块（一）](https://www.tidnotes.ga/?p=163)  
 _2、_[WordPress之Gutenberg（古腾堡）自定义块（二）](https://www.tidnotes.ga/?p=208)  
-_3、[WordPress之Gutenberg（古腾堡）自定义块工具栏](https://www.tidnotes.ga/?p=238)_   
+_3、_[WordPress之Gutenberg（古腾堡）自定义块工具栏](https://www.tidnotes.ga/?p=238)
 
 
 
