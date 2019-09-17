@@ -5,7 +5,7 @@ date: 2019-08-28T03:56:20+08:00
 author: TiD
 layout: post
 guid: https://www.tidnotes.ga/?p=208
-permalink: '/2019/08/wordpress%e4%b9%8bgutenberg%ef%bc%88%e5%8f%a4%e8%85%be%e5%a0%a1%ef%bc%89%e8%87%aa%e5%ae%9a%e4%b9%89%e5%9d%97%ef%bc%88%e4%ba%8c%ef%bc%89.html'
+permalink: '/2019/08/wordpress%E4%B9%8Bgutenberg(%E5%8F%A4%E8%85%BE%E5%A0%A1)%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9D%97(%E4%BA%8C).html'
 categories:
   - WordPress使用技巧
 tags:
