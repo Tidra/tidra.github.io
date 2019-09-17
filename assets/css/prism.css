@@ -1,4 +1,4 @@
-/* http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+clike+javascript+bash+coffeescript+go+java+php+python+sass+scss+swift */
+/* http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+clike+javascript+c+java+json+markdown+php+python+sql&plugins=line-numbers+highlight-keywords+remove-initial-line-feed+data-uri-highlight */
 /**
  * okaidia theme for JavaScript, CSS and HTML
  * Loosely based on Monokai textmate theme by http://www.monokai.nl/
@@ -8,7 +8,6 @@
 code[class*="language-"],
 pre[class*="language-"] {
 	color: #f8f8f2;
-	background: none;
 	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	text-align: left;
@@ -36,9 +35,11 @@ pre[class*="language-"] {
 	border-radius: 0.3em;
 }
 
-:not(pre) > code[class*="language-"],
+:not(pre) > code,
 pre[class*="language-"] {
 	background: #272822;
+	color: #DCDCDC;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 }
 
 /* Inline code */
@@ -121,3 +122,65 @@ pre[class*="language-"] {
 	cursor: help;
 }
 
+pre.line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+	position: relative;
+    white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 1px solid #999;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+.line-numbers-rows > span {
+	pointer-events: none;
+	display: block;
+	counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+	content: counter(linenumber);
+	color: #999;
+	display: block;
+	padding-right: 0.8em;
+	text-align: right;
+}
+
+/* æ ‡é¢˜æ ·å¼ */
+.h2c {
+	border-left: 8px solid red;
+	padding-left: 12px;
+}
+
+.h3c {
+	border-left: 7px solid #006400;
+	padding-left: 12px;
+}
+
+.h4c {
+	border-left: 5px solid #00BFFF;
+	padding-left: 12px;
+}
+
+.h5c {
+	border-left: 5px solid grey;
+	padding-left: 12px;
+}
