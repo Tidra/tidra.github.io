@@ -44,7 +44,7 @@ tags:
 
 有能力的同学可以自己编写样式，WordPress代码主要是由<code class="language-markup">&lt;pre&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;</code>或者<code class="language-markup">&lt;code&gt;&lt;/code&gt;</code>组成。所以编写标签<code class="language-markup">&lt;pre&gt;</code>和标签<code class="language-markup">&lt;cord&gt;</code>的样式表CSS就可以了。
 
-小编直接使用了<a rel="noreferrer noopener" aria-label="（在新窗口打开）" href="https://prismjs.com/" target="_blank">prismjs.com</a>的样式，大家可以到<a rel="noreferrer noopener" aria-label="（在新窗口打开）" href="https://prismjs.com/download.html" target="_blank">prismjs的下载页</a>选择自己要的效果就行。也可以用小编我使用的文件<a rel="noreferrer noopener" aria-label="（在新窗口打开）" href="http://t.cn/AiHrQjH5" target="_blank">（点击下载）</a>，下载完解压缩会得到 prism.css 和 prism.js 两个文件，放到WordPress主题的根目录（如放在其他地方引用记得更改地址），即：<mark>wp安装目录/wp-content/themes/当前使用的主题/</mark>
+小编直接使用了<a rel="noreferrer noopener" aria-label="（在新窗口打开）" href="https://prismjs.com/" target="_blank">prismjs.com</a>的样式，大家可以到<a rel="noreferrer noopener" aria-label="（在新窗口打开）" href="https://prismjs.com/download.html" target="_blank">prismjs的下载页</a>选择自己要的效果就行。也可以用小编我使用的文件<a href="https://tpedutw-my.sharepoint.com/:u:/g/personal/tidra_tp_edu_tw/EXEC17QdPDpChZl7yreuAoIBEV6aMngbOlfxlVLba5iyBg?e=9VvKEg" target="_blank" rel="noreferrer noopener" aria-label="（在新窗口打开）">（点击下载）</a>，下载完解压缩会得到 prism.css 和 prism.js 两个文件，放到WordPress主题的根目录（如放在其他地方引用记得更改地址），即：<mark>wp安装目录/wp-content/themes/当前使用的主题/</mark>
 
 <p class="has-medium-font-size h4c">
   <strong>改写functions.php</strong>
@@ -100,7 +100,7 @@ WordPress 5.22的自义HTML区块可以直接写代码，格式是<code class="l
   <pre class="line-numbers"><code class="lan language-php">//Pre标签内的HTML不转义
 add_filter( 'the_content', 'pre_content_filter', 0 );
 function pre_content_filter( $content ) {
-    return preg_replace_callback( '|&lt;pre.*>&lt;code.*>(.*)&lt;/code>&lt;/pre>|isU' , 'convert_pre_entities', $content );
+    return preg_replace_callback( '|&lt;pre.*&gt;&lt;code.*&gt;(.*)&lt;/code&gt;&lt;/pre&gt;|isU' , 'convert_pre_entities', $content );
 }
 
 function convert_pre_entities( $matches ) {

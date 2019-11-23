@@ -6,7 +6,7 @@ author: TiD
 excerpt: 对于Gutenberg（古腾堡）自定义块，实现预设好的固定单一样式是比较简单的；但如果想更改如字体大小的样式，预设则显得较为困难。所以引入扩展栏，能使我们能更自由地更改自定义样式。本文利用之前自定义代码高亮的需求，自定义了一个带扩展栏的代码块。
 layout: post
 guid: https://www.tidnotes.ga/?p=214
-permalink: '/2019/08/wordpress%E4%B9%8Bgutenberg(%E5%8F%A4%E8%85%BE%E5%A0%A1)%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9D%97%E6%89%A9%E5%B1%95%E6%A0%8F.html'
+permalink: '/2019/08/wordpress%e4%b9%8bgutenberg%ef%bc%88%e5%8f%a4%e8%85%be%e5%a0%a1%ef%bc%89%e8%87%aa%e5%ae%9a%e4%b9%89%e5%9d%97%e6%89%a9%e5%b1%95%e6%a0%8f.html'
 categories:
   - WordPress使用技巧
 tags:

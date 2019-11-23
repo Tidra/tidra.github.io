@@ -6,6 +6,7 @@ author: TiD
 layout: post
 guid: https://tidnotes.ga/?p=145
 permalink: '/2019/08/wordpress%e4%b9%8b%e5%bf%ab%e6%8d%b7%e9%94%ae.html'
+image: /wp-content/uploads/2019/08/shortcut.jpg
 categories:
   - WordPress使用技巧
 tags:

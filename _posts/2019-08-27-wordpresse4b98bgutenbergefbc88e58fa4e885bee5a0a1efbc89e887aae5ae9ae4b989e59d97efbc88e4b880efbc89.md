@@ -5,7 +5,7 @@ date: 2019-08-27T17:30:28+08:00
 author: TiD
 layout: post
 guid: https://tidnotes.ga/?p=163
-permalink: '/2019/08/wordpress%E4%B9%8Bgutenberg(%E5%8F%A4%E8%85%BE%E5%A0%A1)%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9D%97(%E4%B8%80).html'
+permalink: '/2019/08/wordpress%e4%b9%8bgutenberg%ef%bc%88%e5%8f%a4%e8%85%be%e5%a0%a1%ef%bc%89%e8%87%aa%e5%ae%9a%e4%b9%89%e5%9d%97%ef%bc%88%e4%b8%80%ef%bc%89.html'
 categories:
   - WordPress使用技巧
 tags:
@@ -41,18 +41,20 @@ tags:
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
 
-## 效果截图 {.h2c}
+## 效果截图 {.h2c}<figure class="wp-block-gallery columns-2 is-cropped">
 
-<ul class="wp-block-gallery columns-2 is-cropped">
+<ul class="blocks-gallery-grid">
   <li class="blocks-gallery-item">
-    <figure><a href="https://www.haibakeji.com/wp-content/uploads/2019/04/2019040611465542.gif" data-fancybox="images"><img class="wp-image-584 alignnone" src="https://www.haibakeji.com/wp-content/uploads/2019/04/2019040611465542.gif" alt="" data-id="584" data-link="https://www.haibakeji.com/?attachment_id=584" /></a></figure>
+    <figure><a href="https://www.tidnotes.ga/wp-content/uploads/2019/11/2019040611465542.gif"><img src="https://www.tidnotes.ga/wp-content/uploads/2019/11/2019040611465542.gif" alt="" data-id="406" data-full-url="https://www.tidnotes.ga/wp-content/uploads/2019/11/2019040611465542.gif" data-link="https://www.tidnotes.ga/2019/08/wordpress%e4%b9%8bgutenberg%ef%bc%88%e5%8f%a4%e8%85%be%e5%a0%a1%ef%bc%89%e8%87%aa%e5%ae%9a%e4%b9%89%e5%9d%97%ef%bc%88%e4%b8%80%ef%bc%89.html/attachment/2019040611465542" class="wp-image-406" /></a></figure>
   </li>
   <li class="blocks-gallery-item">
-    <figure><a href="https://www.haibakeji.com/wp-content/uploads/2019/04/2019040611465519.gif" data-fancybox="images"><img class="wp-image-585" src="https://www.haibakeji.com/wp-content/uploads/2019/04/2019040611465519.gif" alt="" data-id="585" data-link="https://www.haibakeji.com/?attachment_id=585" /></a></figure>
+    <figure><a href="https://www.tidnotes.ga/wp-content/uploads/2019/11/2019040611465519.gif"><img src="https://www.tidnotes.ga/wp-content/uploads/2019/11/2019040611465519.gif" alt="" data-id="407" data-full-url="https://www.tidnotes.ga/wp-content/uploads/2019/11/2019040611465519.gif" data-link="https://www.tidnotes.ga/2019/08/wordpress%e4%b9%8bgutenberg%ef%bc%88%e5%8f%a4%e8%85%be%e5%a0%a1%ef%bc%89%e8%87%aa%e5%ae%9a%e4%b9%89%e5%9d%97%ef%bc%88%e4%b8%80%ef%bc%89.html/attachment/2019040611465519" class="wp-image-407" /></a></figure>
   </li>
-</ul>
+</ul></figure> 
 
-如图所示，通过创建自定义块可以更方便的调整文章内容功能和效果，在此我以实现上图的两个自定义块为例，一步一步的创建。
+<p class="has-text-align-left">
+  如图所示，通过创建自定义块可以更方便的调整文章内容功能和效果，在此我以实现上图的两个自定义块为例，一步一步的创建。
+</p>
 
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
@@ -88,8 +90,8 @@ function duxq_block() {
     );
 
     register_block_type( 'duxq/block', array(
-        'editor_script' => 'duxq_block',
-        'editor_style'  => 'duxq_block',
+        'editor_script' =&gt; 'duxq_block',
+        'editor_style'  =&gt; 'duxq_block',
     ) );
 }
 if (function_exists('register_block_type')) { //判断是否使用古腾堡编辑器

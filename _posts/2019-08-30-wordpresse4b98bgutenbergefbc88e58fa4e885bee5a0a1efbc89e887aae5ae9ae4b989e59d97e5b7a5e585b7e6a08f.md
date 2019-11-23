@@ -6,7 +6,7 @@ author: TiD
 excerpt: WordPress Gutenberg（古腾堡）除了可以自定义区块、扩展栏，也可以自定义块工具栏。利用wp.richText.registerFormatType()可以自定义特有样式用于自定义工具栏，且可以在全部文本编辑块中以工具栏形式呈现。
 layout: post
 guid: https://www.tidnotes.ga/?p=238
-permalink: '/2019/08/wordpress%E4%B9%8Bgutenberg(%E5%8F%A4%E8%85%BE%E5%A0%A1)%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9D%97%E5%B7%A5%E5%85%B7%E6%A0%8F.html'
+permalink: '/2019/08/wordpress%e4%b9%8bgutenberg%ef%bc%88%e5%8f%a4%e8%85%be%e5%a0%a1%ef%bc%89%e8%87%aa%e5%ae%9a%e4%b9%89%e5%9d%97%e5%b7%a5%e5%85%b7%e6%a0%8f.html'
 categories:
   - WordPress使用技巧
 tags:
