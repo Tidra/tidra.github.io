@@ -30,8 +30,8 @@ tags:
 
 利用<code class="language-js">wp.blocks.registerBlockType('namespace/block-name', {})</code>来构建一个新的自定义块，基本格式如下：
 
-<div style="position: relative;">
-  <pre class="line-numbers"><code class="lan language-js">blocks.registerBlockType('namespace/block-name', {
+<div class="code-copy" style="position: relative;">
+  <pre class="line-numbers language-php"><code>blocks.registerBlockType('namespace/block-name', {
          title: '',
          category: ''
          icon: {},
@@ -64,20 +64,20 @@ tags:
 
 当属性值为 String 时， 可以是任何[WordPress的Dashicons](https://developer.wordpress.org/resource/dashicons/)， 也可以是自定义svg元素。 
 
-<div style="position: relative;">
-  <pre class="line-numbers"><code class="lan language-js">// Specifying a dashicon for the block
+<div class="code-copy" style="position: relative;">
+  <pre class="line-numbers language-php"><code>// Specifying a dashicon for the block
 icon: 'book-alt',
  
 // Specifying a custom svg for the block
-icon: &lt;svg viewBox="0 0 24 24" xmlns="&lt;a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg&lt;/a>">&lt;path fill="none" d="M0 0h24v24H0V0z" />&lt;path d="M19 13H5v-2h14v2z" />&lt;/svg>, </code></pre>
+icon: &lt;svg viewBox="0 0 24 24" xmlns="&lt;a href="http://www.w3.org/2000/svg">http://www.w3.org/2000/svg&lt;/a>">&lt;path fill="none" d="M0 0h24v24H0V0z" />&lt;path d="M19 13H5v-2h14v2z" />&lt;/svg>,</code></pre>
   
   <button name="copy-btn" style="position: absolute;top: 3px;right: 3px;border-radius: 5px;">点击复制</button>
 </div>
 
 当属性值是Object时，如上所述，图标应该包含在src属性中。除了src之外，对象可以包含背景和前景色，例如： 
 
-<div style="position: relative;">
-  <pre class="line-numbers"><code class="lan language-js"> icon: {
+<div class="code-copy" style="position: relative;">
+  <pre class="line-numbers language-php"><code>icon: {
      // 背景色
      background: '#7e70af',
      // 前景色
@@ -93,8 +93,8 @@ icon: &lt;svg viewBox="0 0 24 24" xmlns="&lt;a href="http://www.w3.org/2000/svg"
 
 用attribute从标记中提取属性的值。最简单的一个例子如下：
 
-<div style="position: relative;">
-  <pre class="line-numbers"><code class="lan language-js">{
+<div class="code-copy" style="position: relative;">
+  <pre class="line-numbers language-php"><code>{
      url: {
          type: 'string',
      }
@@ -107,8 +107,8 @@ url就相当于一个字符变量，可以在自定义块中调用。在edit和s
 
 作为提取属性的值，需要加入source（内容来源）和selector（过滤器）两个属性。这个根据不同的需要而相应改变，可以详细阅读 <a rel="noreferrer noopener" aria-label="Gutenberg 开发API ：Attributes（在新窗口打开）" href="https://developer.wordpress.org/block-editor/developers/block-api/block-attributes/" target="_blank">Gutenberg 开发API ：Attributes</a>。这里提供三个常用的例子。
 
-<div style="position: relative;">
-  <pre class="line-numbers"><code class="lan language-js">//例子1，提取块html中&lt;code>标签内的内容到content中，返回值是字符串形式
+<div class="code-copy" style="position: relative;">
+  <pre class="line-numbers language-php"><code>//例子1，提取块html中&lt;code>标签内的内容到content中，返回值是字符串形式
 content: {
      type: 'string',
      source: 'html',
@@ -118,8 +118,8 @@ content: {
   <button name="copy-btn" style="position: absolute;top: 3px;right: 3px;border-radius: 5px;">点击复制</button>
 </div>
 
-<div style="position: relative;">
-  <pre class="line-numbers"><code class="lan language-js">//例子2，提取块中&lt;span>标签内容到content中，返回值是数组形式
+<div class="code-copy" style="position: relative;">
+  <pre class="line-numbers language-php"><code>//例子2，提取块中&lt;span>标签内容到content中，返回值是数组形式
 content: {
      type: 'array',
      source: 'children',
@@ -129,8 +129,8 @@ content: {
   <button name="copy-btn" style="position: absolute;top: 3px;right: 3px;border-radius: 5px;">点击复制</button>
 </div>
 
-<div style="position: relative;">
-  <pre class="line-numbers"><code class="lan language-js">//例子3，提取包含类名为lan的类，用于提取某个标签的类。
+<div class="code-copy" style="position: relative;">
+  <pre class="line-numbers language-php"><code>//例子3，提取包含类名为lan的类，用于提取某个标签的类。
 typeClass: {
      source: 'attribute',
      selector: '.lan',
@@ -144,8 +144,8 @@ typeClass: {
 
 edit 函数在编辑器的上下文中描述块的结构，显示编辑器在使用块时将呈现的内容。save函数定义了将不同属性组合到最终标记中的方式，表示块在网站前面的显示方式。 所以函数返回内容都应该是标准的HTML格式。如：
 
-<div style="position: relative;">
-  <pre class="line-numbers"><code class="lan language-js">edit: function() {
+<div class="code-copy" style="position: relative;">
+  <pre class="line-numbers language-php"><code>edit: function() {
      return wp.element.createElement(
          'div',
          null,

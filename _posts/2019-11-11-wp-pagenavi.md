@@ -26,7 +26,7 @@ tags:
 
 ## 效果图<figure class="wp-block-image">
 
-<a href="blob:https://www.tidnotes.ga/e6a4b65e-5c6d-4401-aafe-f1aca6197dde" target="_blank" rel="noreferrer noopener"><img src="https://www.tidnotes.ga/wp-content/uploads/2019/11/image.png" alt="" class="wp-image-374" srcset="https://www.tidnotes.ga/wp-content/uploads/2019/11/image.png 502w, https://www.tidnotes.ga/wp-content/uploads/2019/11/image-300x67.png 300w" sizes="(max-width: 502px) 100vw, 502px" /></a></figure> 
+<a href="https://www.tidnotes.ga/e6a4b65e-5c6d-4401-aafe-f1aca6197dde" target="_blank" rel="noreferrer noopener"><img src="https://www.tidnotes.ga/wp-content/uploads/2019/11/image.png" alt="" class="wp-image-374" srcset="https://www.tidnotes.ga/wp-content/uploads/2019/11/image.png 502w, https://www.tidnotes.ga/wp-content/uploads/2019/11/image-300x67.png 300w" sizes="(max-width: 502px) 100vw, 502px" /></a></figure> 
 
 ## 实现方法
 
@@ -34,31 +34,31 @@ tags:
 
 首先在主题根目录下的functions.php中加入下面代码。
 
-<div style="position: relative;">
-  <pre class="line-numbers"><code class="lan language-php">if ( !function_exists('pagenavi') ) {
+<div class="code-copy" style="position: relative;">
+  <pre class="line-numbers line-numbers language-php"><code>if ( !function_exists('pagenavi') ) {
     function pagenavi( $p = 2 ) { // 取当前页前后各 2 页
         if ( is_singular() ) return; // 文章与插页不用
         global $wp_query, $paged;
-        $max_page = $wp_query->max_num_pages;
+        $max_page = $wp_query-&gt;max_num_pages;
         if ( $max_page == 1 ) return; // 只有一页不用
         if ( empty( $paged ) ) $paged = 1;
-        echo '&lt;div class="pagenavi">&lt;span class="pages">Page &lt;b>' . $paged . '&lt;/b> of &lt;b>' . $max_page . '&lt;/b>&lt;/span> '; // 显示页数
-	    if ( $paged > 1 ) p_link( $paged - 1, '上一页', '&lsaquo;' );/* 如果当前页大于1就显示上一页链接 */
-        if ( $paged > $p + 1 ) p_link( 1, '首页' );
-		if ( $paged > $p + 2 ) echo '&lt;span class="page-more">...&lt;/span>';
+        echo '&lt;div class="pagenavi"&gt;&lt;span class="pages"&gt;Page &lt;b&gt;' . $paged . '&lt;/b&gt; of &lt;b&gt;' . $max_page . '&lt;/b&gt;&lt;/span&gt; '; // 显示页数
+	    if ( $paged &gt; 1 ) p_link( $paged - 1, '上一页', '‹' );/* 如果当前页大于1就显示上一页链接 */
+        if ( $paged &gt; $p + 1 ) p_link( 1, '首页' );
+		if ( $paged &gt; $p + 2 ) echo '&lt;span class="page-more"&gt;...&lt;/span&gt;';
 
         for( $i = $paged - $p; $i &lt;= $paged + $p; $i++ ) { // 中间页
-            if ( $i > 0 && $i &lt;= $max_page ) $i == $paged ? print "&lt;span class='page-numbers current'>{$i}&lt;/span> " : p_link( $i );
+            if ( $i &gt; 0 && $i &lt;= $max_page ) $i == $paged ? print "&lt;span class='page-numbers current'&gt;{$i}&lt;/span&gt; " : p_link( $i );
         }
-		if ( $paged &lt; $max_page - $p - 1 ) echo '&lt;span class="page-more">...&lt;/span>';
+		if ( $paged &lt; $max_page - $p - 1 ) echo '&lt;span class="page-more"&gt;...&lt;/span&gt;';
 	    if ( $paged &lt; $max_page - $p ) p_link( $max_page, '最后页' );
-		if ( $paged &lt; $max_page ) p_link( $paged + 1,'下一页', '&rsaquo;' );/* 如果当前页不是最后一页显示下一页链接 */
-		echo '&lt;/div>';
+		if ( $paged &lt; $max_page ) p_link( $paged + 1,'下一页', '›' );/* 如果当前页不是最后一页显示下一页链接 */
+		echo '&lt;/div&gt;';
     }
    function p_link( $i, $title = '', $linktype = '' ) {
         if ( $title == '' ) $title = "第 {$i} 页";
         if ( $linktype == '' ) { $linktext = $i; } else { $linktext = $linktype; }
-        echo "&lt;a class='page-numbers' href='", esc_html( get_pagenum_link( $i ) ), "' title='{$title}'>{$linktext}&lt;/a> ";
+        echo "&lt;a class='page-numbers' href='", esc_html( get_pagenum_link( $i ) ), "' title='{$title}'&gt;{$linktext}&lt;/a&gt; ";
     }
 }</code></pre>
   
@@ -69,8 +69,8 @@ tags:
 
 在index.php、archive.php等页面的适当位置加入下面代码。或者将原本主题的分页导航相关代码改为下面代码。
 
-<div style="position: relative;">
-  <pre class="line-numbers"><code class="lan language-php">&lt;?php if (function_exists('pagenavi')) { pagenavi();} ?></code></pre>
+<div class="code-copy" style="position: relative;">
+  <pre class="line-numbers line-numbers language-php"><code>&lt;?php if (function_exists('pagenavi')) { pagenavi();} ?&gt;</code></pre>
   
   <button name="copy-btn" style="position: absolute;top: 3px;right: 3px;border-radius: 5px;">点击复制</button>
 </div>
@@ -79,8 +79,8 @@ tags:
 
 最直接的方法是在主题根目录的style.css加入下面代码，或者写到新的样式表中导入到页面中。
 
-<div style="position: relative;">
-  <pre class="line-numbers"><code class="lan language-css">.pagenavi {
+<div class="code-copy" style="position: relative;">
+  <pre class="line-numbers line-numbers language-css"><code>.pagenavi {
     display: table;
     margin: 50px auto;
 }
@@ -143,16 +143,16 @@ tags:
   * 想要实现页面分页，可以在WordPress（5.0以上的Gutenberg编辑器）编辑页面找到区块：**布局元素 → 分页符**。
   * 更改主页或分类页等显示文章数量，可以到后台管理的 **设置 → 阅读（ 博客页面至多显示 ）**中设置。或者在functions.php加入下面代码。
 
-<div style="position: relative;">
-  <pre class="line-numbers"><code class="lan language-php">function custom_posts_per_page($query) {
+<div class="code-copy" style="position: relative;">
+  <pre class="line-numbers line-numbers language-php"><code>function custom_posts_per_page($query) {
     if (is_home()) {
-        $query->set('posts_per_page', 8);
+        $query-&gt;set('posts_per_page', 8);
     }
     if (is_search()) {
-        $query->set('posts_per_page', -1);
+        $query-&gt;set('posts_per_page', -1);
     }
     if (is_archive()) {
-        $query->set('posts_per_page', 25);
+        $query-&gt;set('posts_per_page', 25);
     } //endif
 } //function
 

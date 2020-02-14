@@ -42,14 +42,14 @@ tags:
 
 ### 基本用法
 
-<div style="position: relative;">
-  <pre class="line-numbers"><code class="lan language-php">&lt;?php 
+<div class="code-copy" style="position: relative;">
+  <pre class="line-numbers language-php"><code>&lt;?php 
 if ( have_posts() ) : 
     while ( have_posts() ) : the_post(); 
         // 显示内容
     endwhile; 
 endif; 
-?&gt;</code></pre>
+?></code></pre>
   
   <button name="copy-btn" style="position: absolute;top: 3px;right: 3px;border-radius: 5px;">点击复制</button>
 </div>
@@ -58,28 +58,28 @@ endif;
 
 其中，利用 if 条件语句，先判断是否有帖子（<code class="language-php">have_posts()</code>），再用 while 循环语句。**注意：if 和 while 都需要结束语，if 对应的结束语是 endif，while 对应的是 endwhile。**
 
-  * <code class="language-php">have_posts()</code>：被调用时实际上是调用全局变量<code class="language-php">$wp_query->have_posts()</code>成员函数，来简单检查一个全局数组（array）变量 $posts 的一个循环计数器，以确认是否还有post，如果有返回true(1)，如果没有返回false(0)。
-  * <code class="language-php">the_post()</code>：调用<code class="language-php">$wp_query->the_post()</code>成员函数前移循环计数器，并且创建一个全局变量 [$post](#post-it) (不是 $posts )，把当前的post的所有信息都填进这个$post变量中，以备接下来使用。
+  * <code class="language-php">have_posts()</code>：被调用时实际上是调用全局变量<code class="language-php">$wp_query-&gt;have_posts()</code>成员函数，来简单检查一个全局数组（array）变量 $posts 的一个循环计数器，以确认是否还有post，如果有返回true(1)，如果没有返回false(0)。
+  * <code class="language-php">the_post()</code>：调用<code class="language-php">$wp_query-&gt;the_post()</code>成员函数前移循环计数器，并且创建一个全局变量 [$post](#post-it) (不是 $posts )，把当前的post的所有信息都填进这个$post变量中，以备接下来使用。
 
 ### 循环中常见的模板标签
 
   * [<code class="language-php">next_post_link()</code>](https://developer.wordpress.org/reference/functions/next_post_link/)：指向当前帖子**之后**按时间顺序发布的帖子的链接
   * [<code class="language-php">previous_post_link()</code>](https://developer.wordpress.org/reference/functions/previous_post_link/)：指向当前帖子**之前**按时间顺序发布的帖子的链接
-  * [<code class="language-php">the_category()</code>](https://developer.wordpress.org/reference/functions/the_category/) ：与正在查看的帖子或页面相关的一个或多个类别
-  * [<code class="language-php">the_author()</code>](https://developer.wordpress.org/reference/functions/the_author/) ：帖子或页面的作者
-  * [<code class="language-php">the_content()</code>](https://developer.wordpress.org/reference/functions/the_content/) ：帖子或页面的主要内容
+  * [<code class="language-php">the_category()</code>](https://developer.wordpress.org/reference/functions/the_category/)&nbsp;：与正在查看的帖子或页面相关的一个或多个类别
+  * [<code class="language-php">the_author()</code>](https://developer.wordpress.org/reference/functions/the_author/)&nbsp;：帖子或页面的作者
+  * [<code class="language-php">the_content()</code>](https://developer.wordpress.org/reference/functions/the_content/)&nbsp;：帖子或页面的主要内容
   * [<code class="language-php">the_excerpt()</code>](https://developer.wordpress.org/reference/functions/the_excerpt/)：帖子主要内容的前55个单词，后接省略号（…）或阅读全文的链接。您也可以使用帖子的“摘录”字段来自定义特定摘录的长度。
-  * [<code class="language-php">the_ID()</code>](https://developer.wordpress.org/reference/functions/the_id/) ：帖子或页面的ID
-  * [<code class="language-php">the_meta()</code>](https://developer.wordpress.org/reference/functions/the_meta/) ：与帖子或页面关联的自定义字段
-  * [<code class="language-php">the_shortlink()</code>](https://developer.wordpress.org/reference/functions/the_shortlink/) ：使用网站的网址和帖子或页面的ID的页面或帖子的链接
-  * [<code class="language-php">the_tags()</code>](https://developer.wordpress.org/reference/functions/the_tags/) ：与帖子相关的一个或多个标签
-  * [<code class="language-php">the_title()</code>](https://developer.wordpress.org/reference/functions/the_title/) ：帖子或页面的标题
+  * [<code class="language-php">the_ID()</code>](https://developer.wordpress.org/reference/functions/the_id/)&nbsp;：帖子或页面的ID
+  * [<code class="language-php">the_meta()</code>](https://developer.wordpress.org/reference/functions/the_meta/)&nbsp;：与帖子或页面关联的自定义字段
+  * [<code class="language-php">the_shortlink()</code>](https://developer.wordpress.org/reference/functions/the_shortlink/)&nbsp;：使用网站的网址和帖子或页面的ID的页面或帖子的链接
+  * [<code class="language-php">the_tags()</code>](https://developer.wordpress.org/reference/functions/the_tags/)&nbsp;：与帖子相关的一个或多个标签
+  * [<code class="language-php">the_title()</code>](https://developer.wordpress.org/reference/functions/the_title/)&nbsp;：帖子或页面的标题
   * [<code class="language-php">the_time()</code>](https://developer.wordpress.org/reference/functions/the_time/)：帖子或页面的时间或日期。可以使用标准的php日期函数格式进行自定义。
 
 以上的函数需要在循环中，主要原因是因为它们需要设置全局变量 [$post](#post-it)。所以只要能得到变量 [$post](http://www.tidnotes.ga/wp-admin/post.php?post=362&action=edit#post-it) ，即可调用上面的函数。所以在文章页（single）、页面（page），可以用下面的代码即可代替循环。
 
-<div style="position: relative;">
-  <pre class="line-numbers"><code class="lan language-php">&lt;?php if (have_posts()) : the_post(); ?>
+<div class="code-copy" style="position: relative;">
+  <pre class="line-numbers language-php"><code>&lt;?php if (have_posts()) : the_post(); ?>
     // 页面内容
     &lt;?php the_content(); ?>
 &lt;?php endif; ?></code></pre>
@@ -89,12 +89,12 @@ endif;
 
 ### 多个循环
 
-在一个页面中，如果使用了循环，如果再次使用则会出错。例如在header.php中输出了文章标题，再在page.php中使用 <code class="language-php">&lt;?php if (have_posts()) : the_post(); ?> </code>会出现错误，得到并非想要的内容。所以这时候就要使用多循环。
+在一个页面中，如果使用了循环，如果再次使用则会出错。例如在header.php中输出了文章标题，再在page.php中使用 <code class="language-php">&lt;?php&nbsp;if&nbsp;(have_posts())&nbsp;:&nbsp;the_post();&nbsp;?&gt; </code>会出现错误，得到并非想要的内容。所以这时候就要使用多循环。
 
 例如，您可能想要在页面顶部的目录列表中显示帖子的标题，然后在页面下方显示内容。由于查询没有被更改，因此当我们需要第二次遍历帖子时，我们只需要倒退循环。为此，我们将使用功能[<code class="language-php">rewind_posts()</code>](https://developer.wordpress.org/reference/functions/rewind_posts/)。 
 
-<div style="position: relative;">
-  <pre class="line-numbers"><code class="lan language-php">&lt;?php
+<div class="code-copy" style="position: relative;">
+  <pre class="line-numbers language-php"><code>&lt;?php
 // 第一次循环
 if ( have_posts() ) : 
     while ( have_posts() ) : the_post();
@@ -118,20 +118,20 @@ endwhile;
 
 下面是常用的 $post 的变量索引，更多内容可以查看[WP_Post](https://developer.wordpress.org/reference/classes/wp_post/)的详细说明：
 
-  * <code class="language-php">$post–>ID</code>：当前文章的ID；
-  * <code class="language-php">$post–>post_category</code>：检索文章类别；
-  * <code class="language-php">$post–>post_parent</code>：父页面。用于创建自定义导航元素；
-  * <code class="language-php">$post–>post_title</code>：文章标题；
-  * <code class="language-php">$post–>post_excerpt</code>：文章摘要；
-  * <code class="language-php">$post–>post_content</code>：检索所有文章内容以及任何标记；
-  * <code class="language-php">$post–>post_name</code>：检索帖子的别名；
-  * <code class="language-php">$post–>guid</code>：文章 Url；
-  * <code class="language-php">$post–>post_author</code>：文章作者ID；
-  * <code class="language-php">$post–>post_type</code>：返回分类类型，包括自定义分类、page或者post；
-  * <code class="language-php">$post–>post_date</code>：检索发布文章的本地时间戳；
-  * <code class="language-php">$post->post_modified</code>：文章修改的本地时间；
-  * <code class="language-php">$post–>post_status</code>：检索文章的状态：发布，私有，草稿，等待复审；
-  * <code class="language-php">$post–>comment_count</code>：返回文章的评论数量。
+  * <code class="language-php">$post–&gt;ID</code>：当前文章的ID；
+  * <code class="language-php">$post–&gt;post_category</code>：检索文章类别；
+  * <code class="language-php">$post–&gt;post_parent</code>：父页面。用于创建自定义导航元素；
+  * <code class="language-php">$post–&gt;post_title</code>：文章标题；
+  * <code class="language-php">$post–&gt;post_excerpt</code>：文章摘要；
+  * <code class="language-php">$post–&gt;post_content</code>：检索所有文章内容以及任何标记；
+  * <code class="language-php">$post–&gt;post_name</code>：检索帖子的别名；
+  * <code class="language-php">$post–&gt;guid</code>：文章 Url；
+  * <code class="language-php">$post–&gt;post_author</code>：文章作者ID；
+  * <code class="language-php">$post–&gt;post_type</code>：返回分类类型，包括自定义分类、page或者post；
+  * <code class="language-php">$post–&gt;post_date</code>：检索发布文章的本地时间戳；
+  * <code class="language-php">$post-&gt;post_modified</code>：文章修改的本地时间；
+  * <code class="language-php">$post–&gt;post_status</code>：检索文章的状态：发布，私有，草稿，等待复审；
+  * <code class="language-php">$post–&gt;comment_count</code>：返回文章的评论数量。
 
 上述参数可以根据大家需要修改主题文件，或者制作自己的主题。制作主题的教程可以到《[WordPress之主题制作](http://www.tidnotes.ga/2019/11/wordpress-theme-diy.html)》一文去查看。
 

@@ -54,8 +54,8 @@ functions.php位于当前使用的主题目录下，就是 <mark>wp安装目录/
 
 在functions.php文件最后的<code class="language-markup">?&gt;</code>前插入如下代码，没有<code class="language-markup">?&gt;</code>就在最后加上<code class="language-markup">?&gt;</code>。
 
-<div style="position: relative;">
-  <pre class="line-numbers"><code class="lan language-php">//Wordpress免插件实现代码高亮
+<div class="code-copy" style="position: relative;">
+  <pre class="line-numbers language-php"><code>//Wordpress免插件实现代码高亮
 //Prism.js开始
 function add_prism() {
         wp_register_style(
@@ -96,11 +96,11 @@ WordPress 5.22的自义HTML区块可以直接写代码，格式是<code class="l
 
 如果中间添加的是HTML代码，使用转义后的代码，即<code class="language-markup">&lt;</code>改为<code class="language-markup">&lt</code>，<code class="language-markup">&gt;</code>改为<code class="language-markup">&gt</code>，不想转义可以在functions.php文件加入下面代码。
 
-<div style="position: relative;">
-  <pre class="line-numbers"><code class="lan language-php">//Pre标签内的HTML不转义
+<div class="code-copy" style="position: relative;">
+  <pre class="line-numbers language-php"><code>//Pre标签内的HTML不转义
 add_filter( 'the_content', 'pre_content_filter', 0 );
 function pre_content_filter( $content ) {
-    return preg_replace_callback( '|&lt;pre.*&gt;&lt;code.*&gt;(.*)&lt;/code&gt;&lt;/pre&gt;|isU' , 'convert_pre_entities', $content );
+    return preg_replace_callback( '|&lt;pre.*>&lt;code.*>(.*)&lt;/code>&lt;/pre>|isU' , 'convert_pre_entities', $content );
 }
 
 function convert_pre_entities( $matches ) {

@@ -28,6 +28,8 @@ tags:
 
 以下内容是基于jQuery写的一个颜色选择器，大家可以根据需要学习、修改或引用，引用还请注明出处。
 
+<!--more-->
+
 ## 成品效果<figure class="wp-block-image">
 
 [<img src="https://www.tidnotes.ga/wp-content/uploads/2019/11/image-2.png" alt="颜色选择器 | 小TiD笔记" class="wp-image-397" srcset="https://www.tidnotes.ga/wp-content/uploads/2019/11/image-2.png 507w, https://www.tidnotes.ga/wp-content/uploads/2019/11/image-2-300x178.png 300w" sizes="(max-width: 507px) 100vw, 507px" />](https://www.tidnotes.ga/color)<figcaption>[在线版颜色选择器](https://www.tidnotes.ga/color)</figcaption></figure> 
@@ -43,7 +45,7 @@ tags:
 
 ### 关于颜色
 
-  * 可以利用h5的<code class="language-markup">&lt;canvas></code>标签来绘制颜色；
+  * 可以利用h5的<code class="language-markup">&lt;canvas&gt;</code>标签来绘制颜色；
   * 主颜色的变化规律如下：#ff0000 → #ffff → #00ff00 → #00ffff → #0000ff → #ff00ff → #ff0000；
   * 深色变化利用 rgba(0,0,0,0) → rgba(0,0,0,1) 实现；
   * 浅色变化利用 rgba(255,255,255,0) → rgba(255,255,255,1) 实现。
@@ -51,16 +53,16 @@ tags:
 ## 使用方法
 
 先引入JQuery的文件：  
-<code class="language-markup">&lt;script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">&lt;/script> </code>
+<code class="language-markup">&lt;script&nbsp;src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"&gt;&lt;/script&gt; </code>
 
-直接复制下面的代码，或是将GitHub上的[colorSelector.js](https://github.com/Tidra/ColorSelector-for-HTML/blob/master/colorSelector.js)下载到本地，在需要显示的地方用<code class="language-markup">&lt;script src="colorSelector.js">&lt;/script></code>即可显示颜色选择器。 
+直接复制下面的代码，或是将GitHub上的[colorSelector.js](https://github.com/Tidra/ColorSelector-for-HTML/blob/master/colorSelector.js)下载到本地，在需要显示的地方用<code class="language-markup">&lt;script src="colorSelector.js"&gt;&lt;/script&gt;</code>即可显示颜色选择器。 
 
-或者直接使用<code class="language-markup">&lt;script src="https://raw.githubusercontent.com/Tidra/ColorSelector-for-HTML/master/colorSelector.js">&lt;/script></code>即可。
+或者直接使用<code class="language-markup">&lt;script src="https://raw.githubusercontent.com/Tidra/ColorSelector-for-HTML/master/colorSelector.js"&gt;&lt;/script&gt;</code>即可。
 
 ## 实现代码（colorSelector.js）
 
-<div style="position: relative;">
-  <pre class="line-numbers"><code class="lan language-js">/**
+<div class="code-copy" style="position: relative;">
+  <pre class="line-numbers line-numbers line-numbers language-js"><code>/**
  * 作者(Author)：tidra
  * 作者URI(Author URI)：https://www.tidnotes.ga
  * 版本(Version)：1.0
@@ -69,7 +71,7 @@ tags:
  */
 
 function createBox() {
-    var htmlText = '&lt;div class="color-box">&lt;div style="position: relative;margin-right: 20px;">&lt;canvas class="colorbck" id="colorbck" width="255" height="255">&lt;/canvas>&lt;div class="it" id="it">&lt;/div>&lt;/div>&lt;div style="position: relative;margin-right: 20px;">&lt;canvas class="colorbar" id="colorbar" width="10" height="255">&lt;/canvas>&lt;div class="choose-it" id="choose-it">&lt;div>&lt;/div>&lt;/div>&lt;/div>&lt;div style="line-height: 30px;">&lt;b>当前选择颜色：&lt;/b>&lt;div id="show">&lt;/div>&lt;div id="showColor">&lt;/div>&lt;/div>&lt;/div>';
+    var htmlText = '&lt;div class="color-box"&gt;&lt;div style="position: relative;margin-right: 20px;"&gt;&lt;canvas class="colorbck" id="colorbck" width="255" height="255"&gt;&lt;/canvas&gt;&lt;div class="it" id="it"&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="position: relative;margin-right: 20px;"&gt;&lt;canvas class="colorbar" id="colorbar" width="10" height="255"&gt;&lt;/canvas&gt;&lt;div class="choose-it" id="choose-it"&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div style="line-height: 30px;"&gt;&lt;b&gt;当前选择颜色：&lt;/b&gt;&lt;div id="show"&gt;&lt;/div&gt;&lt;div id="showColor"&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;';
     
     document.write(htmlText);
 
@@ -107,7 +109,7 @@ function createBox() {
         'border-radius': '100%',
     })
 
-    $('.choose-it').append("&lt;style>#choose-it::before{position: absolute;content: '▶';right: 10px;top: -7px;}&lt;/style>").append("&lt;style>#choose-it::after{position: absolute;content: '◀';left: 10px;top: -7px;}&lt;/style >");
+    $('.choose-it').append("&lt;style&gt;#choose-it::before{position: absolute;content: '▶';right: 10px;top: -7px;}&lt;/style&gt;").append("&lt;style&gt;#choose-it::after{position: absolute;content: '◀';left: 10px;top: -7px;}&lt;/style &gt;");
 
     $('#show').css({
         'width': '50px',
@@ -159,12 +161,12 @@ function boxActive() {
     function clickIt(X = 0, Y = 0, who = 'bck') {
         if (X &lt; 0) {
             X = 0;
-        } else if (X > 254) {
+        } else if (X &gt; 254) {
             X = 254;
         }
         if (Y &lt; 0) {
             Y = 0;
-        } else if (Y > 254) {
+        } else if (Y &gt; 254) {
             Y = 254;
         }
         var imgData = [];
@@ -196,7 +198,7 @@ function boxActive() {
         $('#show').css({
             'background-color': color
         })
-        $('#showColor').html(color + '&lt;br>' + hex);
+        $('#showColor').html(color + '&lt;br&gt;' + hex);
 
     }
 
