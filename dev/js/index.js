@@ -230,42 +230,51 @@ $(document).ready(function(){
     /**
      * Copy and copyright
      */
-    function setClipboardData(str) {
-        str += '\n\n著作权归作者所有。\n商业转载请联系作者获得授权,非商业转载请注明出处。\n原文: ' + location.href.replace("tidnotes.cf","www.tidnotes.ga");
-        $('.post-content').on('copy', function(e) {
-            var data = window.clipboardData || e.originalEvent.clipboardData;
-            data.setData('text/plain', str);
-            e.preventDefault();
-        });
-    }
-    $('.post-content').on('mouseup', function(e) {
-        var txt = window.getSelection();
-        if (txt.toString().length >= 30) {
-            setClipboardData(txt);
-        }
-    });
+    function setClipboardData(str, i) {
+		if (i == 1) {
+			str += '\n\n著作权归作者所有。\n商业转载请联系作者获得授权,非商业转载请注明出处。\n原文: ' + location.href;
+		}
+		$('.article').on('copy', function (e) {
+			var data = window.clipboardData || e.originalEvent.clipboardData;
+			data.setData('text/plain', str);
+			console.log(data.items)
+			e.preventDefault();
+		});
+	}
+	$('.article').on('mouseup', function (e) {
+		var txt = window.getSelection();
+		if (txt.toString().length >= 30) {
+			setClipboardData(txt, 1);
+		} else {
+			setClipboardData(txt, 0);
+		}
+	});
 
-    /**
-     * Copy butten
-     */
-    function copy(e) {
-        var code = e.toElement.previousElementSibling;
-        var range = document.createRange();
-        range.selectNode(code);
-    
-        var selection = window.getSelection();
-        if (selection.rangeCount > 0) selection.removeAllRanges();
-        selection.addRange(range);
-        document.execCommand('copy');
-    
-        e.toElement.innerHTML = "已复制";
-        setTimeout(function () {
-            e.toElement.innerHTML = "点击复制";
-        }, 3000);
-    }
-    var obj = document.getElementsByName("copy-btn");
-    for (var i = 0; i < obj.length; i++) {
-        obj[i].addEventListener("click", copy);
-    }
+	/**
+	 * 复制
+	 */
+	function copy(e) {
+		var code = e.toElement.previousElementSibling;
+		console.log(code);
+		var range = document.createRange();
+		range.selectNode(code);
+
+		var selection = window.getSelection();
+		if (selection.rangeCount > 0) selection.removeAllRanges();
+		selection.addRange(range);
+
+		setClipboardData(selection, 0)
+		document.execCommand('copy');
+
+		e.toElement.innerHTML = "已复制";
+		setTimeout(function () {
+			e.toElement.innerHTML = "点击复制";
+		}, 3000);
+	}
+
+	var obj = document.getElementsByName("copy-btn");
+	for (var i = 0; i < obj.length; i++) {
+		obj[i].addEventListener("click", copy);
+	}
 
 });
