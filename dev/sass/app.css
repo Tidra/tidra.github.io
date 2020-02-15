@@ -634,6 +634,14 @@ a {
     .markdown-body ul li p:first-child, .markdown-body ol li p:first-child {
       margin-bottom: 0; }
 
+/* 来源说明 */
+
+.origin-quote {
+  background: #F8F8FF;
+  border-left: 10px solid #00BFFF;
+  margin-top: 50px;
+}
+
 .social-share-wrapper {
   float: left;
   position: relative;
