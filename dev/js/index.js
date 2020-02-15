@@ -245,4 +245,12 @@ $(document).ready(function(){
         }
     });
 
+    /**
+     * Copy butten
+     */
+    var obj = document.getElementsByName("copy-btn");
+    for (var i = 0; i < obj.length; i++) {
+        obj[i].addEventListener("click", copy);
+    }
+
 });
