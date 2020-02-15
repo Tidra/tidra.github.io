@@ -248,6 +248,21 @@ $(document).ready(function(){
     /**
      * Copy butten
      */
+    function copy(e) {
+        var code = e.toElement.previousElementSibling;
+        var range = document.createRange();
+        range.selectNode(code);
+    
+        var selection = window.getSelection();
+        if (selection.rangeCount > 0) selection.removeAllRanges();
+        selection.addRange(range);
+        document.execCommand('copy');
+    
+        e.toElement.innerHTML = "已复制";
+        setTimeout(function () {
+            e.toElement.innerHTML = "点击复制";
+        }, 3000);
+    }
     var obj = document.getElementsByName("copy-btn");
     for (var i = 0; i < obj.length; i++) {
         obj[i].addEventListener("click", copy);
