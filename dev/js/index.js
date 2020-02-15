@@ -237,7 +237,6 @@ $(document).ready(function(){
 		$('.article').on('copy', function (e) {
 			var data = window.clipboardData || e.originalEvent.clipboardData;
 			data.setData('text/plain', str);
-			console.log(data.items)
 			e.preventDefault();
 		});
 	}
@@ -255,7 +254,6 @@ $(document).ready(function(){
 	 */
 	function copy(e) {
 		var code = e.toElement.previousElementSibling;
-		console.log(code);
 		var range = document.createRange();
 		range.selectNode(code);
 
