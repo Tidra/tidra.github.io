@@ -43,13 +43,13 @@ tags:
 ### 基本用法
 
 <div class="code-copy" style="position: relative;">
-  <pre class="line-numbers language-php"><code>&lt;?php 
+  <pre class="line-numbers line-numbers language-php"><code>&lt;?php 
 if ( have_posts() ) : 
     while ( have_posts() ) : the_post(); 
         // 显示内容
     endwhile; 
 endif; 
-?></code></pre>
+?&gt;</code></pre>
   
   <button name="copy-btn" style="position: absolute;top: 3px;right: 3px;border-radius: 5px;">点击复制</button>
 </div>
@@ -76,13 +76,13 @@ endif;
   * [<code class="language-php">the_title()</code>](https://developer.wordpress.org/reference/functions/the_title/)&nbsp;：帖子或页面的标题
   * [<code class="language-php">the_time()</code>](https://developer.wordpress.org/reference/functions/the_time/)：帖子或页面的时间或日期。可以使用标准的php日期函数格式进行自定义。
 
-以上的函数需要在循环中，主要原因是因为它们需要设置全局变量 [$post](#post-it)。所以只要能得到变量 [$post](http://www.tidnotes.ga/wp-admin/post.php?post=362&action=edit#post-it) ，即可调用上面的函数。所以在文章页（single）、页面（page），可以用下面的代码即可代替循环。
+以上的函数需要在循环中，主要原因是因为它们需要设置全局变量 [$post](#post-it)。所以只要能得到变量 [$post](#post-it) ，即可调用上面的函数。所以在文章页（single）、页面（page），可以用下面的代码即可代替循环。
 
 <div class="code-copy" style="position: relative;">
-  <pre class="line-numbers language-php"><code>&lt;?php if (have_posts()) : the_post(); ?>
+  <pre class="line-numbers line-numbers language-php"><code>&lt;?php if (have_posts()) : the_post(); ?&gt;
     // 页面内容
-    &lt;?php the_content(); ?>
-&lt;?php endif; ?></code></pre>
+    &lt;?php the_content(); ?&gt;
+&lt;?php endif; ?&gt;</code></pre>
   
   <button name="copy-btn" style="position: absolute;top: 3px;right: 3px;border-radius: 5px;">点击复制</button>
 </div>
@@ -94,7 +94,7 @@ endif;
 例如，您可能想要在页面顶部的目录列表中显示帖子的标题，然后在页面下方显示内容。由于查询没有被更改，因此当我们需要第二次遍历帖子时，我们只需要倒退循环。为此，我们将使用功能[<code class="language-php">rewind_posts()</code>](https://developer.wordpress.org/reference/functions/rewind_posts/)。 
 
 <div class="code-copy" style="position: relative;">
-  <pre class="line-numbers language-php"><code>&lt;?php
+  <pre class="line-numbers line-numbers language-php"><code>&lt;?php
 // 第一次循环
 if ( have_posts() ) : 
     while ( have_posts() ) : the_post();
@@ -109,7 +109,7 @@ rewind_posts();
 while ( have_posts() ) : the_post();
     the_content();
 endwhile;
-?></code></pre>
+?&gt;</code></pre>
   
   <button name="copy-btn" style="position: absolute;top: 3px;right: 3px;border-radius: 5px;">点击复制</button>
 </div>
