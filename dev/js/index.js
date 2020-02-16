@@ -260,6 +260,7 @@ $(document).ready(function(){
 		});
 	}
 	if (IsPC() == true) {
+        console.log("phonr1.0")
 		$(window).on('touchend', function (e) {
 			console.log('a')
 			var txt = window.getSelection();
@@ -270,7 +271,7 @@ $(document).ready(function(){
 			}
 		});
 	} else {
-		$('.post-content').on('mouseup touchend', function (e) {
+		$('.post-content').on('mouseup', function (e) {
 			console.log('aa')
 			var txt = window.getSelection();
 			if (txt.toString().length >= 30) {
