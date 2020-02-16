@@ -231,8 +231,8 @@ $(document).ready(function () {
 	 * Copy and copyright
 	 */
     function setClipboardData(i, str) {
-        console.log('a1.7', i)
-        $('.post-content').on('copy', function (e) {
+        console.log('a1.9', i)
+        $('.post-content').off('copy').on('copy', function (e) {
             var data = window.clipboardData || e.originalEvent.clipboardData;
             if (i == 1) {
                 str = window.getSelection();
@@ -241,6 +241,7 @@ $(document).ready(function () {
                 }
             }
             console.log('b', i, str.toString())
+            i = 1
             data.setData('text/plain', str)
             console.log('c', data.getData('text'))
             e.preventDefault();
