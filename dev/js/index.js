@@ -230,29 +230,20 @@ $(document).ready(function () {
 	/**
 	 * Copy and copyright
 	 */
-    function setClipboardData(str, i) {
-        console.log('aa',i)
-        if (i == 1) {
-            str += '\n\n著作权归作者所有。\n商业转载请联系作者获得授权,非商业转载请注明出处。\n原文: ' + location.href;
-        }
+    function setClipboardData(i, str) {
+        console.log('a1.4',i)
         $('.post-content').on('copy', function (e) {
             var data = window.clipboardData || e.originalEvent.clipboardData;
+            if (i == 1 && str.toString().length >= 30){
+                str += '\n\n著作权归作者所有。\n商业转载请联系作者获得授权,非商业转载请注明出处。\n原文: ' + location.href;
+            }
             console.log('b', data.getData('text'))
             data.setData('text/plain', str)
             console.log('c', data.getData('text'))
             e.preventDefault();
         });
     }
-    $(document).on('mouseup touchend', function (e) {
-        console.log('1.2')
-        var txt = window.getSelection();
-        console.log('a',txt.toString())
-        if (txt.toString().length >= 30) {
-            setClipboardData(txt, 1);
-        } else {
-            setClipboardData(txt, 0);
-        }
-    });
+    setClipboardData(1)
 
 	/**
 	 * 复制
@@ -266,7 +257,7 @@ $(document).ready(function () {
         if (selection.rangeCount > 0) selection.removeAllRanges();
         selection.addRange(range);
 
-        setClipboardData(selection, 0)
+        setClipboardData(0, selection)
         document.execCommand('copy');
 
         e.toElement.innerHTML = "已复制";
