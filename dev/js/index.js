@@ -231,13 +231,13 @@ $(document).ready(function () {
 	 * Copy and copyright
 	 */
     function setClipboardData(i, str) {
-        console.log('a1.4',i)
+        console.log('a1.5',i)
         $('.post-content').on('copy', function (e) {
             var data = window.clipboardData || e.originalEvent.clipboardData;
-            if (i == 1 && str.toString().length >= 30){
+            console.log('b', data.getData('text'))
+            if (i == 1 && data.getData('text').toString().length >= 30){
                 str += '\n\n著作权归作者所有。\n商业转载请联系作者获得授权,非商业转载请注明出处。\n原文: ' + location.href;
             }
-            console.log('b', data.getData('text'))
             data.setData('text/plain', str)
             console.log('c', data.getData('text'))
             e.preventDefault();
