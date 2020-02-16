@@ -227,27 +227,59 @@ $(document).ready(function(){
         nightMode();
     }
 
-    /**
-     * Copy and copyright
-     */
-    function setClipboardData(str, i) {
+	/**
+	 * 判断是否为移动设备
+	 */
+	function IsPC() {
+		var userAgentInfo = navigator.userAgent;
+		var Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+		var flag = true;
+		for (var v = 0; v < Agents.length; v++) {
+			if (userAgentInfo.indexOf(Agents[v]) > 0) {
+				flag = false;
+				break;
+			}
+		}
+		return flag;
+	}
+
+	/**
+	 * Copy and copyright
+	 */
+	function setClipboardData(str, i) {
 		if (i == 1) {
-			str += '\n\n著作权归作者所有。\n商业转载请联系作者获得授权,非商业转载请注明出处。\n原文: ' + location.href.replace("tidnotes.cf","www.tidnotes.ga");
+			str += '\n\n著作权归作者所有。\n商业转载请联系作者获得授权,非商业转载请注明出处。\n原文: ' + location.href;
 		}
 		$('.post-content').on('copy', function (e) {
 			var data = window.clipboardData || e.originalEvent.clipboardData;
-            data.setData('text/plain', str);
+			console.log('b', i, str.toString())
+			data.clearData('text')
+			data.setData('text/plain', str)
+			console.log('c', data.getData('text'))
 			e.preventDefault();
 		});
 	}
-	$('.post-content').on('mouseup', function (e) {
-		var txt = window.getSelection();
-		if (txt.toString().length >= 30) {
-			setClipboardData(txt, 1);
-		} else {
-			setClipboardData(txt, 0);
-		}
-	});
+	if (IsPC() == true) {
+		$(window).on('touchend', function (e) {
+			console.log('a')
+			var txt = window.getSelection();
+			if (txt.toString().length >= 30) {
+				setClipboardData(txt, 1);
+			} else {
+				setClipboardData(txt, 0);
+			}
+		});
+	} else {
+		$('.post-content').on('mouseup touchend', function (e) {
+			console.log('aa')
+			var txt = window.getSelection();
+			if (txt.toString().length >= 30) {
+				setClipboardData(txt, 1);
+			} else {
+				setClipboardData(txt, 0);
+			}
+		});
+	}
 
 	/**
 	 * 复制
