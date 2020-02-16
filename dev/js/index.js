@@ -237,15 +237,15 @@ $(document).ready(function () {
         $('.post-content').on('copy', function (e) {
             var data = window.clipboardData || e.originalEvent.clipboardData;
             console.log('b', i, str.toString())
-            data.clearData('text')
             data.setData('text/plain', str)
             console.log('c', data.getData('text'))
             e.preventDefault();
         });
     }
-    $(window).on('mouseup touchend', function (e) {
-        console.log('aa')
+    $(document).on('mouseup touchend', function (e) {
+        console.log('1.2')
         var txt = window.getSelection();
+        console.log('a',txt.toString())
         if (txt.toString().length >= 30) {
             setClipboardData(txt, 1);
         } else {
