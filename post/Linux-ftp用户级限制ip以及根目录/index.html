@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="https://www.tidnotes.top/post/linux修改fs-inotify-max-user-watches/"/>
+  <link rel="canonical" href="https://www.tidnotes.top/post/linux-ftp用户级限制ip以及根目录/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -37,23 +37,23 @@
   <!-- feed -->
       <link rel="alternate" href="/atom.xml" title="小TiD笔记" type="application/atom+xml">
   <!-- 页面元数据 -->
-  <title>Linux修改fs.inotify.max_user_watches - 小TiD笔记</title>
-  <meta name="keywords" content="linux,npm,docker,TiD,小tid,小tid笔记,tidnotes,技术,wordpress,前端,js">
-  <meta desc name="description" content="小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问 - TiDra - 小TiD笔记">
+  <title>[Linux]ftp用户级限制ip以及根目录 - 小TiD笔记</title>
+  <meta name="keywords" content="linux,ftp,ip,用户限制,ftp根目录,TiD,小tid,小tid笔记,tidnotes,技术,wordpress,前端,js">
+  <meta desc name="description" content="搭建FTP服务器，并限制不同用户的根目录和限制不同用户限定ip登录。
+因限制ip必须要用系统用户，故本文不涉及虚拟用户的使用以及相关配置。 - TiDra - 小TiD笔记">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux修改fs.inotify.max_user_watches">
-<meta property="og:url" content="https://www.tidnotes.top/post/Linux%E4%BF%AE%E6%94%B9fs-inotify-max-user-watches/index.html">
+<meta property="og:title" content="[Linux]ftp用户级限制ip以及根目录">
+<meta property="og:url" content="https://www.tidnotes.top/post/Linux-ftp%E7%94%A8%E6%88%B7%E7%BA%A7%E9%99%90%E5%88%B6ip%E4%BB%A5%E5%8F%8A%E6%A0%B9%E7%9B%AE%E5%BD%95/index.html">
 <meta property="og:site_name" content="小TiD笔记">
-<meta property="og:description" content="目前发现使用 code-server 以及 npm 发现，经常会出现“”xxx unable to watch for file changes in this large workspace” (error ENOSPC)”、“外部文件更改同步可能很慢”、“当前的 inotify(7) 监视限制太低” 等问题。 原因系统参数 fs.inotify.max_user_watches 设置值低，限制">
+<meta property="og:description" content="搭建FTP服务器，并限制不同用户的根目录和限制不同用户限定ip登录。 因限制ip必须要用系统用户，故本文不涉及虚拟用户的使用以及相关配置。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.tidnotes.top/custom/log.svg">
-<meta property="article:published_time" content="2024-04-15T02:04:35.000Z">
-<meta property="article:modified_time" content="2024-04-15T02:46:01.552Z">
+<meta property="article:published_time" content="2024-07-02T09:29:54.000Z">
+<meta property="article:modified_time" content="2024-07-11T09:29:54.000Z">
 <meta property="article:author" content="TiDra">
 <meta property="article:tag" content="linux">
-<meta property="article:tag" content="npm">
-<meta property="article:tag" content="docker">
+<meta property="article:tag" content="ftp">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.tidnotes.top/custom/log.svg">
   <style>
@@ -2881,7 +2881,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="https://schema.org.cn/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="https://www.tidnotes.top/post/Linux修改fs-inotify-max-user-watches/">
+  <link itemprop="mainEntityOfPage" href="https://www.tidnotes.top/post/Linux-ftp用户级限制ip以及根目录/">
   <span hidden itemprop="publisher" itemscope itemtype="https://schema.org.cn/Organization">
     <meta itemprop="name" content="小TiD笔记">
   </span>
@@ -2902,7 +2902,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        Linux修改fs.inotify.max_user_watches
+        [Linux]ftp用户级限制ip以及根目录
       </h1>
       <div class='new-meta-box'>
         
@@ -2924,10 +2924,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">问题解决</a>
+    <a class="category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
     
       <span hidden itemprop="about" itemscope itemtype="https://schema.org.cn/Thing">
-        <a href="/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" itemprop="url"><span itemprop="name">问题解决</span></a>
+        <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url"><span itemprop="name">工具</span></a>
       </span>
     
   </div>
@@ -2938,10 +2938,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-04-15T10:04:35+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-07-02T17:29:54+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2024年4月15日</p>
+    <p>发布于：2024年7月2日</p>
   </a>
 </div>
 
@@ -2973,13 +2973,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：322 字</p>
+      <p>字数：1.2k 字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1 分钟</p>
+      <p>时长：4 分钟</p>
     </a>
   </div>
 
@@ -2996,24 +2996,86 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>目前发现使用 <code>code-server</code> 以及 <code>npm</code> 发现，经常会出现“”xxx unable to watch for file changes in this large workspace” (error ENOSPC)”、“外部文件更改同步可能很慢”、“当前的 inotify(7) 监视限制太低” 等问题。</p>
-<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>系统参数 <code>fs.inotify.max_user_watches</code> 设置值低，限制了每个用户所能创建的 <code>inotify</code> 实例的数量。每个实例可以监视一个或多个文件或目录。当数量超过此限制时，新的监视请求将被拒绝。</p>
-<div class="note "><p><code>Linux</code> 通过 <code>fs.inotify.max_user_watches</code> 参数限制内核中 <code>inotify</code> 子系统的观察者数量。 <code>inotify</code> 是一种文件系统监控机制，它可以用于检测文件或目录的变化，并在事件发生时通知相关的应用程序。</p></div>
+    <p>搭建FTP服务器，并限制不同用户的根目录和限制不同用户限定ip登录。</p>
+<p>因限制ip必须要用系统用户，故本文不涉及虚拟用户的使用以及相关配置。</p>
+<span id="more"></span>
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看 `fs.inotify.max_user_watches` 参数值</span></span><br><span class="line">sysctl fs.inotify.max_user_watches</span><br></pre></td></tr></table></figure>
+<h2 id="安装ftp服务"><a href="#安装ftp服务" class="headerlink" title="安装ftp服务"></a>安装ftp服务</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># centos</span></span><br><span class="line">yum install vsftpd</span><br><span class="line"></span><br><span class="line"><span class="comment"># ubuntu 或 debian</span></span><br><span class="line">apt install vsftpd</span><br></pre></td></tr></table></figure>
 
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><div class="note "><p>需要使用 <strong>管理员权限</strong> 进行修改！</p></div>
-<div class="note warning"><p><code>docker</code> 内修改失败，显示没有权限修改时，需要到宿主机内用管理权限执行以下内容。</p></div>
-
-<ol>
-<li><p>临时修改</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sysctl fs.inotify.max_user_watches=524288</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>永久修改</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;fs.inotify.max_user_watches=524288&quot;</span> &gt;&gt; /etc/sysctl.conf &amp;&amp; sysctl -p</span><br></pre></td></tr></table></figure></li>
+<h2 id="新增登录用户"><a href="#新增登录用户" class="headerlink" title="新增登录用户"></a>新增登录用户</h2><ol>
+<li>配置新用户</li>
 </ol>
-<p>如需要排查具体出现这种情况的原因，可以参考</p>
-<div class="tag link"><a class="link-card" title="inotify watch 耗尽" target="_blank" rel="noopener" href="https://www.bookstack.cn/read/kubernetes-practice-guide/troubleshooting-handle-runnig-out-of-inotify-watches.md"><div class="left"><img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/256/safari.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/256/safari.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/></div><div class="right"><p class="text">inotify watch 耗尽</p><p class="url">https://www.bookstack.cn/read/kubernetes-practice-guide/troubleshooting-handle-runnig-out-of-inotify-watches.md</p></div></a></div>
+<p><code>useradd</code> 可以使用 <code>-d</code> 指定用户根目录；使用 <code>-s /sbin/nologin</code> 禁用 <code>ssh</code> 登录，或者可以在 <code>/etc/ssh/sshd_config</code> 增加内容 <code>DenyUsers admin</code> 禁止该用户使用ssh登录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">useradd -d /home/admin -s /sbin/nologin admin</span><br><span class="line">passwd admin</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>解决 <strong>“530 Login incorrect”</strong></li>
+</ol>
+<p>从vsftpd 2.3.0版本开始vsftpd默认会检查用户的shell，如果用户的shell在 <code>/etc/shells</code> 没有记录，则无法登陆ftp</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;/sbin/nologin&#x27;</span> &gt;&gt; /etc/shells</span><br></pre></td></tr></table></figure>
+
+<h2 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h2><figure class="highlight plaintext"><figcaption><span>/etc/vsftpd/vsftpd.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 是否允许匿名用户登陆</span><br><span class="line">anonymous_enable=NO</span><br><span class="line"># 必须置YES，允许本地用户来访问的</span><br><span class="line">local_enable=YES</span><br><span class="line"># 允许对文件系统做改动的 FTP 命令</span><br><span class="line">write_enable=YES</span><br><span class="line"># 本地用户创建文件所用的 umask 值</span><br><span class="line">local_umask=022</span><br><span class="line"># vsftpd 将监听 IPv4</span><br><span class="line">listen=YES</span><br><span class="line"># vsftpd 将监听 IPv6 而不是 IPv4</span><br><span class="line">listen_ipv6=NO</span><br></pre></td></tr></table></figure>
+
+<h2 id="不同用户根目录指向不一样位置"><a href="#不同用户根目录指向不一样位置" class="headerlink" title="不同用户根目录指向不一样位置"></a>不同用户根目录指向不一样位置</h2><p>让不同用户登ftp时的根目录(<code>/</code>)实际存储在ftp服务器的目录不一样，并非设置为让不同用户登录时自动跳到的目录(用户根目录)不一样。</p>
+<ol>
+<li>在 <code>/etc/vsftpd/vsftpd.conf</code> 增加配置<figure class="highlight plaintext"><figcaption><span>/etc/vsftpd/vsftpd.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 限制用户登录在local_root目录中（该目录在ftp显示为“/”）</span><br><span class="line">chroot_local_user=YES</span><br><span class="line"> # 允许例外的用户使用ftp服务器目录</span><br><span class="line">chroot_list_enable=YES</span><br><span class="line"># 例外名单</span><br><span class="line">chroot_list_file=/etc/vsftpd/chroot_list</span><br><span class="line"></span><br><span class="line"># 通用限制用户的ftp根目录</span><br><span class="line">local_root=/data/ftp</span><br><span class="line"># 特定用户配置目录</span><br><span class="line">user_config_dir=/etc/vsftpd/user_conf</span><br></pre></td></tr></table></figure></li>
+<li>新建用户配置目录<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /etc/vsftpd/user_conf</span><br></pre></td></tr></table></figure></li>
+<li>在 <code>/etc/vsftpd/user_conf</code> 下创建以用户名命名的配置文件，如admin用户<figure class="highlight plaintext"><figcaption><span>/etc/vsftpd/user_conf/admin</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">local_root=/data/admin</span><br><span class="line"># 允许在根目录（local_root目录）下写</span><br><span class="line">allow_writeable_chroot=YES</span><br></pre></td></tr></table></figure></li>
+<li>重启vsftpd服务<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart vsftpd</span><br></pre></td></tr></table></figure></li>
+</ol>
+<blockquote>
+<ul>
+<li><p>特定用户配置文件优先级高于 <code>/etc/vsftpd/vsftpd.conf</code> 配置文件。</p>
+</li>
+<li><p>如果 <code>allow_writeable_chroot</code> 未开启，需要将用户根目录权限的写权限全部去掉，否则会报 <strong>“500 OOPS”</strong> 错误：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> a-w /data/ftp</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果 <code>local_root</code> 未设置，默认为系统用户设置的用户根目录</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="限制不同用户限定ip登录"><a href="#限制不同用户限定ip登录" class="headerlink" title="限制不同用户限定ip登录"></a>限制不同用户限定ip登录</h2><blockquote>
+<p>ftp的虚拟账号无法使用该方法，需要是系统本地账号。如果使用了虚拟账号，需要在本地建同名账号。</p>
+</blockquote>
+<ol>
+<li><p>修改文件 <code>/etc/pam.d/vsftpd</code></p>
+<figure class="highlight plaintext"><figcaption><span>/etc/pam.d/vsftpd</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 新增下面内容</span><br><span class="line">account    required     pam_access.so</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改文件 <code>/etc/security/access.conf</code></p>
+<figure class="highlight plaintext"><figcaption><span>/etc/security/access.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 文件最后新增</span><br><span class="line">+:admin:192.168.1.1               #admin用户可以从192.168.1.1这个IP访问FTP服务</span><br><span class="line">-:admin:ALL                       #admin用户禁止任何IP除上面的192.168.1.1访问FTP服务</span><br><span class="line">-:download:192.168.1.1            #download用户不允许从192.168.1.1这个IP访问FTP服务</span><br></pre></td></tr></table></figure>
+<p>根据个人实际配置，“+”为允许，“-”为拒绝，每一行为一个规则，规则匹配的优先级从上到下依次递减。注意 IPv4 和 IPv6 的写法，两种写法并不通用。</p>
+</li>
+</ol>
+<blockquote>
+<p>上述示例使用一个允许、一个拒绝规则来完成对用户admin只允许从192.168.1.1访问，实际还有个写法如下：</p>
+<p><code>-:admin:ALL EXCEPT 192.168.1.1   #用户admin只能从192.168.1.1这个IP访问FTP服务</code></p>
+<p>但目前本人使用centos7来配置时并不生效，请酌情使用</p>
+</blockquote>
+<ol start="3">
+<li>重启vsftpd服务<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart vsftpd</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><h3 id="ls-命令无法显示ftp目录下的文件内容问题"><a href="#ls-命令无法显示ftp目录下的文件内容问题" class="headerlink" title="ls 命令无法显示ftp目录下的文件内容问题"></a><code>ls</code> 命令无法显示ftp目录下的文件内容问题</h3><p>一般出现这种问题是因为客户端和服务端防火墙配置问题，根据不同的ftp需要配置不同的防火墙策略。</p>
+<p>ftp的模式工作模式分为：</p>
+<ol>
+<li>主动模式：<ul>
+<li>命令链接：客户端 大于1023端口 -&gt; 服务器 21端口</li>
+<li>数据连接：客户端 大于1023端口 &lt;- 服务器 20端口</li>
+</ul>
+</li>
+<li>被动模式：<ul>
+<li>命令连接：客户端 大于1023端口 -&gt; 服务器 21端口</li>
+<li>数据连接：客户端 大于1023端口 -&gt; 服务器 大于1023端口</li>
+</ul>
+</li>
+</ol>
+<p>如果ftp服务端只开启了主动模式；就需要客户端只使用主动模式，且要开放客户端的高位端口号的全部；<br>如果ftp服务端开启了被动模式，那么就需要开放客户端的高位端口；客户端无需开放防火墙，只需要用被动模式连接即可。</p>
+<p>两种模式对于客户端和服务端都有利有弊，折衷的解决办法：启用被动模式，限制FTP服务高位端口范围。</p>
+<ol>
+<li>修改 <code>/etc/vsftpd/vsftpd.conf</code> 增加配置<figure class="highlight plaintext"><figcaption><span>/etc/vsftpd/vsftpd.conf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 开启被动模式</span><br><span class="line">pasv_enable=YES</span><br><span class="line"># 被动模式最低端口号</span><br><span class="line">pasv_min_port=7000</span><br><span class="line"># 被动模式最高端口号</span><br><span class="line">pasv_max_port=8000</span><br></pre></td></tr></table></figure></li>
+<li>开放7000-8000端口防火墙（根据自己配置的端口设置）<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --add-port=7000-8000/tcp</span><br><span class="line"></span><br><span class="line">firewall-cmd  --load</span><br></pre></td></tr></table></figure></li>
+<li>重启vsftpd服务<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart vsftpd</span><br></pre></td></tr></table></figure></li>
+</ol>
+
   </div>
   
   
@@ -3035,7 +3097,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                 
               
                 
-                  <p>本文永久链接是：<a href="https://www.tidnotes.top/post/Linux修改fs-inotify-max-user-watches/">https://www.tidnotes.top/post/Linux修改fs-inotify-max-user-watches/</a></p>
+                  <p>本文永久链接是：<a href="https://www.tidnotes.top/post/Linux-ftp用户级限制ip以及根目录/">https://www.tidnotes.top/post/Linux-ftp用户级限制ip以及根目录/</a></p>
                 
               
             </blockquote>
@@ -3054,10 +3116,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-04-15T10:46:01+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-07-11T17:29:54+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2024年4月15日</p>
+    <p>更新于：2024年7月11日</p>
   </a>
 </div>
 
@@ -3068,8 +3130,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/linux/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>linux</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/npm/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>npm</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/docker/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>docker</p></a></div>
-  <span hidden itemprop="keywords">linux npm docker</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/linux/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>linux</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/ftp/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>ftp</p></a></div>
+  <span hidden itemprop="keywords">linux ftp</span>
   
 
 
@@ -3083,7 +3145,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.tidnotes.top/post/Linux%E4%BF%AE%E6%94%B9fs-inotify-max-user-watches/&title=Linux修改fs.inotify.max_user_watches - 小TiD笔记&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.tidnotes.top/post/Linux-ftp%E7%94%A8%E6%88%B7%E7%BA%A7%E9%99%90%E5%88%B6ip%E4%BB%A5%E5%8F%8A%E6%A0%B9%E7%9B%AE%E5%BD%95/&title=[Linux]ftp用户级限制ip以及根目录 - 小TiD笔记&summary=搭建FTP服务器，并限制不同用户的根目录和限制不同用户限定ip登录。
+因限制ip必须要用系统用户，故本文不涉及虚拟用户的使用以及相关配置。"
           
           >
           
@@ -3095,7 +3158,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.tidnotes.top/post/Linux%E4%BF%AE%E6%94%B9fs-inotify-max-user-watches/&title=Linux修改fs.inotify.max_user_watches - 小TiD笔记&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.tidnotes.top/post/Linux-ftp%E7%94%A8%E6%88%B7%E7%BA%A7%E9%99%90%E5%88%B6ip%E4%BB%A5%E5%8F%8A%E6%A0%B9%E7%9B%AE%E5%BD%95/&title=[Linux]ftp用户级限制ip以及根目录 - 小TiD笔记&summary=搭建FTP服务器，并限制不同用户的根目录和限制不同用户限定ip登录。
+因限制ip必须要用系统用户，故本文不涉及虚拟用户的使用以及相关配置。"
           
           >
           
@@ -3107,7 +3171,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.tidnotes.top/post/Linux%E4%BF%AE%E6%94%B9fs-inotify-max-user-watches/&title=Linux修改fs.inotify.max_user_watches - 小TiD笔记&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.tidnotes.top/post/Linux-ftp%E7%94%A8%E6%88%B7%E7%BA%A7%E9%99%90%E5%88%B6ip%E4%BB%A5%E5%8F%8A%E6%A0%B9%E7%9B%AE%E5%BD%95/&title=[Linux]ftp用户级限制ip以及根目录 - 小TiD笔记&summary=搭建FTP服务器，并限制不同用户的根目录和限制不同用户限定ip登录。
+因限制ip必须要用系统用户，故本文不涉及虚拟用户的使用以及相关配置。"
           
           >
           
@@ -3140,23 +3205,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/post/Hexo-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Hexo 命令速查</p>
-          <p class='content'>具体详情查看文章
-Hexo 指令https://hexo.io/zh-cn/docs/commands
-
-新文章、页面
-文章
-
-123hexo new &lt;title&gt;hexo new...</p>
-        </a>
       
-      
-        <a class='next' href='/post/hexo-volantis%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/'>
-          <p class='title'>Hexo-Volantis主题优化<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>初始化安装hexo并且配置主题volantis
-1. 安装hexo并初始化12345npm i hexomkdir ./blogcd ./bloghexo init
-2. 下载主题并修改hexo...</p>
+        <a class='next' href='/post/nfs%E5%85%B1%E4%BA%AB%E4%B8%8E%E6%8C%82%E8%BD%BD/'>
+          <p class='title'>[Linux]nfs共享与挂载<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>记录用于 pve、openwrt 以及 centos 的nfs文件共享以及文件夹挂载，nfs相关的防火墙 iptables、firewall 设置。
+
+
+
+开启文件共享准备工作准备好共享的文件目...</p>
         </a>
       
     </div>
@@ -3175,7 +3231,7 @@ Hexo 指令https://hexo.io/zh-cn/docs/commands
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/post/Linux%E4%BF%AE%E6%94%B9fs-inotify-max-user-watches/index.html#comments">
+      <meta itemprop="discussionUrl" content="/post/Linux-ftp%E7%94%A8%E6%88%B7%E7%BA%A7%E9%99%90%E5%88%B6ip%E4%BB%A5%E5%8F%8A%E6%A0%B9%E7%9B%AE%E5%BD%95/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -3217,7 +3273,7 @@ Hexo 指令https://hexo.io/zh-cn/docs/commands
 
 
   <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E5%9B%A0"><span class="toc-text">原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3"><span class="toc-text">解决</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85ftp%E6%9C%8D%E5%8A%A1"><span class="toc-text">安装ftp服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E%E7%99%BB%E5%BD%95%E7%94%A8%E6%88%B7"><span class="toc-text">新增登录用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE"><span class="toc-text">基础配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E7%94%A8%E6%88%B7%E6%A0%B9%E7%9B%AE%E5%BD%95%E6%8C%87%E5%90%91%E4%B8%8D%E4%B8%80%E6%A0%B7%E4%BD%8D%E7%BD%AE"><span class="toc-text">不同用户根目录指向不一样位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%90%E5%88%B6%E4%B8%8D%E5%90%8C%E7%94%A8%E6%88%B7%E9%99%90%E5%AE%9Aip%E7%99%BB%E5%BD%95"><span class="toc-text">限制不同用户限定ip登录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text">问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ls-%E5%91%BD%E4%BB%A4%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BAftp%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E9%97%AE%E9%A2%98"><span class="toc-text">ls 命令无法显示ftp目录下的文件内容问题</span></a></li></ol></li></ol>
   </div>
 </section>
 
@@ -3896,7 +3952,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"小TiD笔记","url":"https://www.tidnotes.top/","logo":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"TiDra","image":{"@type":"ImageObject","url":"/custom/log.svg"},"url":"https://www.tidnotes.top/","sameAs":["https://github.com/Tidra"],"description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.tidnotes.top/","name":"小TiD笔记"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.tidnotes.top/categories/问题解决/","name":"问题解决"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.tidnotes.top/post/Linux修改fs-inotify-max-user-watches/","name":"Linux修改fs.inotify.max_user_watches"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"小TiD笔记","url":"https://www.tidnotes.top/","keywords":"TiD,小tid,小tid笔记,tidnotes,技术,wordpress,前端,js","description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问","author":{"@type":"Person","name":"TiDra","image":{"@type":"ImageObject","url":"/custom/log.svg"},"url":"https://www.tidnotes.top/","description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问"},"publisher":{"@type":"Organization","name":"小TiD笔记","url":"https://www.tidnotes.top/","logo":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://www.tidnotes.top?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"Linux修改fs.inotify.max_user_watches","description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tidnotes.top/post/Linux%E4%BF%AE%E6%94%B9fs-inotify-max-user-watches/"},"author":{"@type":"Person","name":"TiDra","image":{"@type":"ImageObject","url":"/custom/log.svg"},"url":"https://www.tidnotes.top/"},"publisher":{"@type":"Organization","name":"小TiD笔记","logo":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}},"url":"https://www.tidnotes.top/post/Linux%E4%BF%AE%E6%94%B9fs-inotify-max-user-watches/","wordCount":0,"datePublished":"2024-04-15T02:04:35.000Z","dateModified":"2024-04-15T02:46:01.552Z","articleSection":"问题解决","keywords":"linux,npm,docker","image":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"小TiD笔记","url":"https://www.tidnotes.top/","logo":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"TiDra","image":{"@type":"ImageObject","url":"/custom/log.svg"},"url":"https://www.tidnotes.top/","sameAs":["https://github.com/Tidra"],"description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.tidnotes.top/","name":"小TiD笔记"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.tidnotes.top/categories/工具/","name":"工具"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.tidnotes.top/post/Linux-ftp用户级限制ip以及根目录/","name":"[Linux]ftp用户级限制ip以及根目录"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"小TiD笔记","url":"https://www.tidnotes.top/","keywords":"TiD,小tid,小tid笔记,tidnotes,技术,wordpress,前端,js","description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问","author":{"@type":"Person","name":"TiDra","image":{"@type":"ImageObject","url":"/custom/log.svg"},"url":"https://www.tidnotes.top/","description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问"},"publisher":{"@type":"Organization","name":"小TiD笔记","url":"https://www.tidnotes.top/","logo":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://www.tidnotes.top?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"[Linux]ftp用户级限制ip以及根目录","description":"搭建FTP服务器，并限制不同用户的根目录和限制不同用户限定ip登录。\n因限制ip必须要用系统用户，故本文不涉及虚拟用户的使用以及相关配置。","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tidnotes.top/post/Linux-ftp%E7%94%A8%E6%88%B7%E7%BA%A7%E9%99%90%E5%88%B6ip%E4%BB%A5%E5%8F%8A%E6%A0%B9%E7%9B%AE%E5%BD%95/"},"author":{"@type":"Person","name":"TiDra","image":{"@type":"ImageObject","url":"/custom/log.svg"},"url":"https://www.tidnotes.top/"},"publisher":{"@type":"Organization","name":"小TiD笔记","logo":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}},"url":"https://www.tidnotes.top/post/Linux-ftp%E7%94%A8%E6%88%B7%E7%BA%A7%E9%99%90%E5%88%B6ip%E4%BB%A5%E5%8F%8A%E6%A0%B9%E7%9B%AE%E5%BD%95/","wordCount":69,"datePublished":"2024-07-02T09:29:54.000Z","dateModified":"2024-07-11T09:29:54.000Z","articleSection":"工具","keywords":"linux,ftp","image":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}}]</script>
 
 
 

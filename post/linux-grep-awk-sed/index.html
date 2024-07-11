@@ -39,17 +39,20 @@
   <!-- 页面元数据 -->
   <title>[Linux]关于grep、awk、sed命令 - 小TiD笔记</title>
   <meta name="keywords" content="linux,awk,grep,sed,TiD,小tid,小tid笔记,tidnotes,技术,wordpress,前端,js">
-  <meta desc name="description" content="小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问 - TiDra - 小TiD笔记">
+  <meta desc name="description" content="
+对于一些文件字段或文件名等截取或重命名等操作，我们一般会用到正则等方法实现，Linux中的 grep、awk、sed 命令同样能得到上述的效果，本文主要是介绍这三者的区别和用法。
+本文参考文章：linux命令小记（grep、awk、sed）
+ - TiDra - 小TiD笔记">
   
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Linux]关于grep、awk、sed命令">
 <meta property="og:url" content="https://www.tidnotes.top/post/linux-grep-awk-sed/index.html">
 <meta property="og:site_name" content="小TiD笔记">
-<meta property="og:description" content="对于一些文件字段或文件名等截取或重命名等操作，我们一般会用到正则等方法实现，Linux中的 grep、awk、sed 命令同样能得到上述的效果，本文主要是介绍这三者的区别和用法。 本文参考文章：linux命令小记（grep、awk、sed）  grep命令grep（global search regular expression(RE) and print out the line，全面搜索正则">
+<meta property="og:description" content="对于一些文件字段或文件名等截取或重命名等操作，我们一般会用到正则等方法实现，Linux中的 grep、awk、sed 命令同样能得到上述的效果，本文主要是介绍这三者的区别和用法。 本文参考文章：linux命令小记（grep、awk、sed）">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.tidnotes.top/custom/log.svg">
 <meta property="article:published_time" content="2020-02-04T14:31:15.000Z">
-<meta property="article:modified_time" content="2024-04-16T07:13:56.067Z">
+<meta property="article:modified_time" content="2024-07-01T06:23:42.172Z">
 <meta property="article:author" content="TiDra">
 <meta property="article:tag" content="linux">
 <meta property="article:tag" content="awk">
@@ -2290,7 +2293,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1717425706474),
+    lastupdate: new Date(1720691778649),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -3006,9 +3009,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <blockquote>
-<p>对于一些文件字段或文件名等截取或重命名等操作，我们一般会用到正则等方法实现，Linux中的 <a href="#grep">grep</a>、<a href="#awk">awk</a>、<a href="#sed">sed</a> 命令同样能得到上述的效果，本文主要是介绍这三者的区别和用法。</p>
+<p>对于一些文件字段或文件名等截取或重命名等操作，我们一般会用到正则等方法实现，Linux中的 <a href="#grep%E5%91%BD%E4%BB%A4">grep</a>、<a href="#awk%E5%91%BD%E4%BB%A4">awk</a>、<a href="#sed%E5%91%BD%E4%BB%A4">sed</a> 命令同样能得到上述的效果，本文主要是介绍这三者的区别和用法。</p>
 <p>本文参考文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/song_aq/article/details/78527571">linux命令小记（grep、awk、sed）</a></p>
 </blockquote>
+<span id="more"></span>
 <h2 id="grep命令"><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令</h2><p><code>grep</code>（global search regular expression(RE) and print out the line，全面搜索正则表达式并把行打印出来）是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。</p>
 <h3 id="常用选项"><a href="#常用选项" class="headerlink" title="常用选项"></a>常用选项</h3><ul>
 <li><code>-c</code> 计算匹配的列数。</li>
@@ -3025,23 +3029,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li><code>-L</code> 列出文件内容不匹配的文件名称。</li>
 <li><code>-n</code> 在显示匹配的那一列之前，标示出该列的编号。</li>
 <li><code>-q</code> 不显示任何信息。</li>
-<li><code>-R/-r</code> 此参数的效果和指定“-d recurse”参数相同。</li>
+<li><code>-R/-r</code> 此参数的效果和指定 <code>-d recurse</code> 参数相同。</li>
 <li><code>-s</code> 不显示错误信息。</li>
 <li><code>-v</code> 反转查找。</li>
-<li><code>-y</code> 此参数效果跟“-i”相同。</li>
+<li><code>-y</code> 此参数效果跟 <code>-i</code> 相同。</li>
 <li><code>-o</code> 只输出文件中匹配到的部分。</li>
 </ul>
 <blockquote>
 <p>补充：<a target="_blank" rel="noopener" href="https://man.linuxde.net/egrep"><code>egrep</code></a> 命令用于在文件内查找指定的字符串，egrep执行效果与 <code>grep -E</code> 相似。<a target="_blank" rel="noopener" href="https://man.linuxde.net/fgrep"><code>fgrep</code></a> 命令和 <code>grep -F</code> 命令是一样的，但出错和用法消息不同，<code>-s</code> 标志功能也不同。</p>
 </blockquote>
-<h3 id="常见用法"><a href="#常见用法" class="headerlink" title="常见用法"></a>常见用法</h3><p>在文件中搜索一个单词，命令会返回一个包含 <code>“match_pattern”</code> 的文本行：</p>
+<h3 id="常见用法"><a href="#常见用法" class="headerlink" title="常见用法"></a>常见用法</h3><p>在文件中搜索一个单词，命令会返回一个包含 <code>&quot;match_pattern&quot;</code> 的文本行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">grep match_pattern file_name</span><br><span class="line">grep <span class="string">&quot;match_pattern&quot;</span> file_name</span><br><span class="line"></span><br><span class="line"><span class="comment"># 多文件查找</span></span><br><span class="line">grep <span class="string">&quot;match_pattern&quot;</span> file_1 file_2 file_3 ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 标记匹配颜色</span></span><br><span class="line">grep <span class="string">&quot;match_pattern&quot;</span> file_name --color=auto</span><br></pre></td></tr></table></figure>
 
 <p>使用正则匹配：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">grep -E <span class="string">&quot;[1-9]+&quot;</span></span><br><span class="line">egrep <span class="string">&quot;[1-9]+&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 只输出文件中匹配到的部分</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;this is a test line.&#x27;</span>  grep -o -E <span class="string">&quot;[a-z]+\.&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;this is a test line.&#x27;</span>  egrep -o <span class="string">&quot;[a-z]+\.&quot;</span></span><br><span class="line">&gt; line.</span><br><span class="line"></span><br><span class="line"><span class="comment"># 忽略大小写</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;hello world&quot;</span>  grep -i <span class="string">&quot;HELLO&quot;</span></span><br><span class="line">&gt; hello</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">grep -E <span class="string">&quot;[1-9]+&quot;</span></span><br><span class="line">egrep <span class="string">&quot;[1-9]+&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 只输出文件中匹配到的部分</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;this is a test line.&#x27;</span> | grep -o -E <span class="string">&quot;[a-z]+\.&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;this is a test line.&#x27;</span> | egrep -o <span class="string">&quot;[a-z]+\.&quot;</span></span><br><span class="line">&gt; line.</span><br><span class="line"></span><br><span class="line"><span class="comment"># 忽略大小写</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;hello world&quot;</span> | grep -i <span class="string">&quot;HELLO&quot;</span></span><br><span class="line">&gt; hello</span><br></pre></td></tr></table></figure>
 
 <p>多个匹配样式：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> this is a text line  grep -e <span class="string">&quot;is&quot;</span> -e <span class="string">&quot;line&quot;</span> -o</span><br><span class="line">&gt; is</span><br><span class="line">&gt; line</span><br><span class="line"></span><br><span class="line"><span class="comment"># 也可以使用-f选项来匹配多个样式，在样式文件中逐行写出需要匹配的字符。</span></span><br><span class="line"><span class="built_in">cat</span> patfile</span><br><span class="line">&gt; aaa</span><br><span class="line">&gt; bbb</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> aaa bbb ccc ddd eee  grep -f patfile -o</span><br><span class="line">&gt; aaa</span><br><span class="line">&gt; bbb</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> this is a text line | grep -e <span class="string">&quot;is&quot;</span> -e <span class="string">&quot;line&quot;</span> -o</span><br><span class="line">&gt; is</span><br><span class="line">&gt; line</span><br><span class="line"></span><br><span class="line"><span class="comment"># 也可以使用-f选项来匹配多个样式，在样式文件中逐行写出需要匹配的字符。</span></span><br><span class="line"><span class="built_in">cat</span> patfile</span><br><span class="line">&gt; aaa</span><br><span class="line">&gt; bbb</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> aaa bbb ccc ddd eee | grep -f patfile -o</span><br><span class="line">&gt; aaa</span><br><span class="line">&gt; bbb</span><br></pre></td></tr></table></figure>
 
 <p>在多级目录中对文本进行递归搜索：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># .表示当前目录</span></span><br><span class="line">grep <span class="string">&quot;text&quot;</span> . -r -n</span><br><span class="line"></span><br><span class="line"><span class="comment">#只在目录中所有的.php和.html文件中递归搜索字符&quot;main()&quot;</span></span><br><span class="line">grep <span class="string">&quot;main()&quot;</span> . -r --include *.&#123;php,html&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#在搜索结果中排除所有README文件</span></span><br><span class="line">grep <span class="string">&quot;main()&quot;</span> . -r --exclude <span class="string">&quot;README&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#在搜索结果中排除filelist文件列表里的文件</span></span><br><span class="line">grep <span class="string">&quot;main()&quot;</span> . -r --exclude-from filelist</span><br></pre></td></tr></table></figure>
@@ -3067,17 +3071,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">&#x27;END&#123; print NR &#125;&#x27;</span> filename</span><br></pre></td></tr></table></figure>
 
 <p>指定分隔符：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> 111__222__333  awk <span class="string">&#x27;BEGIN&#123;FS=&quot;__&quot;&#125;&#123;print $1&#125;&#x27;</span></span><br><span class="line">&gt;111</span><br><span class="line"><span class="built_in">echo</span> 111__222__333  awk -F <span class="string">&quot;__&quot;</span> <span class="string">&#x27;&#123;print $1&#125;&#x27;</span></span><br><span class="line">&gt;111</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> 111__222__333 | awk <span class="string">&#x27;BEGIN&#123;FS=&quot;__&quot;&#125;&#123;print $1&#125;&#x27;</span></span><br><span class="line">&gt;111</span><br><span class="line"><span class="built_in">echo</span> 111__222__333 | awk -F <span class="string">&quot;__&quot;</span> <span class="string">&#x27;&#123;print $1&#125;&#x27;</span></span><br><span class="line">&gt;111</span><br></pre></td></tr></table></figure>
 
 <p>匹配：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 输出正则匹配&quot;match_pattern&quot;的一行</span></span><br><span class="line">awk <span class="string">&#x27;/match_pattern/&#x27;</span> filename</span><br><span class="line">&gt;</span><br><span class="line"><span class="comment"># 输出正则匹配第二个字段的行</span></span><br><span class="line">awk <span class="string">&#x27;&#123;if($2~/^80$/)print&#125;&#x27;</span> filename</span><br><span class="line">&gt;</span><br><span class="line"><span class="comment"># 输出正则不匹配第二个字段的行</span></span><br><span class="line">awk <span class="string">&#x27;&#123;if($2!~/^80$/)print&#125;&#x27;</span> filename</span><br><span class="line">&gt;</span><br><span class="line"><span class="comment"># 输出第二个字段为&quot;match_pattern&quot;的行</span></span><br><span class="line">awk <span class="string">&#x27;&#123;if($2==&quot;match_pattern&quot;)print&#125;&#x27;</span> filename</span><br></pre></td></tr></table></figure>
 
-<h2 id="sed命令"><a href="#sed命令" class="headerlink" title="sed命令"></a>sed命令</h2><p><a target="_blank" rel="noopener" href="https://man.linuxde.net/sed"><code>sed</code></a> 操作的是一个输入文件在内存的一个副本，对副本内容进行编辑活动，如果没有重定向到一个文件，会将文件修改的结果输出到屏幕。和 <a href="#awk"><code>awk</code></a> 一样，不会修改输入文件的内容。</p>
+<h2 id="sed命令"><a href="#sed命令" class="headerlink" title="sed命令"></a>sed命令</h2><p><a target="_blank" rel="noopener" href="https://man.linuxde.net/sed"><code>sed</code></a> 操作的是一个输入文件在内存的一个副本，对副本内容进行编辑活动，如果没有重定向到一个文件，会将文件修改的结果输出到屏幕。和 <a href="#awk%E5%91%BD%E4%BB%A4"><code>awk</code></a> 一样，不会修改输入文件的内容。</p>
 <h3 id="基本命令和选项"><a href="#基本命令和选项" class="headerlink" title="基本命令和选项"></a>基本命令和选项</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sed [options] <span class="string">&#x27;command&#x27;</span> file(s)</span><br><span class="line">sed [options] -f scriptfile file(s)</span><br></pre></td></tr></table></figure>
 
 <h4 id="选项-1"><a href="#选项-1" class="headerlink" title="选项"></a>选项</h4><ul>
-<li><code>-e&lt;script&gt;或--expression=&lt;script&gt;</code> 以选项中的指定的script来处理输入的文本文件；</li>
-<li><code>-f&lt;script文件&gt;或--file=&lt;script文件&gt;</code> 以选项中指定的script文件来处理输入的文本文件；</li>
+<li><code>-e &lt;script&gt;或--expression=&lt;script&gt;</code> 以选项中的指定的script来处理输入的文本文件；</li>
+<li><code>-f &lt;script文件&gt;或--file=&lt;script文件&gt;</code> 以选项中指定的script文件来处理输入的文本文件；</li>
 <li><code>-h或--help</code> 显示帮助；</li>
 <li><code>-n或--quiet或--silent</code> 仅显示script处理后的结果；</li>
 <li><code>-V或--version</code> 显示版本信息。</li>
@@ -3108,10 +3112,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li><code>$</code> 匹配行结束，如：<code>/sed$/</code> 匹配所有以sed结尾的行。</li>
 <li><code>.</code> 匹配一个非换行符的任意字符，如：<code>/s.d/</code> 匹配s后接一个任意字符，最后是d。</li>
 <li><code>*</code> 匹配0个或多个字符，如：<code>/*sed/</code> 匹配所有模板是一个或多个空格后紧跟sed的行。</li>
-<li><code>\[\]</code> 匹配一个指定范围内的字符，如：<code>/\[ss\]ed/</code> 匹配sed和Sed。</li>
-<li><code>\[^\]</code> 匹配一个不在指定范围内的字符，如：<code>/\[^A-RT-Z\]ed/</code> 匹配不包含A-R和T-Z的一个字母开头，紧跟ed的行。</li>
-<li><code>\(..\)</code> 匹配子串，保存匹配的字符，如：<code>s/\(love\)able/\1rs</code> ，loveable被替换成lovers。</li>
-<li><code>&amp;</code> 保存搜索字符用来替换其他字符，如：<code>s/love/\*\*&amp;\*\*/</code> ，love这成**love**。</li>
+<li><code>[]</code> 匹配一个指定范围内的字符，如：<code>/[sS]ed/</code> 匹配sed和Sed。</li>
+<li><code>[^]</code> 匹配一个不在指定范围内的字符，如：<code>/[^A-RT-Z]ed/</code> 匹配不包含A-R和T-Z的一个字母开头，紧跟ed的行。</li>
+<li><code>\(..\)</code> 匹配子串，保存匹配的字符，如：<code>s/\(love\)able/\1rs/</code> ，loveable被替换成lovers。</li>
+<li><code>&amp;</code> 保存搜索字符用来替换其他字符，如：<code>s/love/**&amp;**/</code> ，love这成**love**。</li>
 <li><code>\&lt;</code> 匹配单词的开始，如：<code>/\&lt;love/</code> 匹配包含以love开头的单词的行。</li>
 <li><code>\&gt;</code> 匹配单词的结束，如：<code>/love\&gt;/</code> 匹配包含以love结尾的单词的行。</li>
 <li><code>x\&#123;m\&#125;</code> 重复字符x，m次，如：<code>/0\&#123;5\&#125;/</code> 匹配包含5个0的行。</li>
@@ -3119,7 +3123,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li><code>x\&#123;m,n\&#125;</code> 重复字符x，至少m次，不多于n次，如：<code>/0\&#123;5,10\&#125;/</code> 匹配5~10个0的行。</li>
 </ul>
 <h3 id="常用用法"><a href="#常用用法" class="headerlink" title="常用用法"></a>常用用法</h3><p>替换文本中的字符串：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">&#x27;s/book/books/&#x27;</span> file</span><br><span class="line"></span><br><span class="line"><span class="comment"># -n选项和p命令一起使用表示只打印那些发生替换的行</span></span><br><span class="line">sed -n <span class="string">&#x27;s/test/TEST/p&#x27;</span> file</span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接编辑文件选项-i，会匹配file文件中每一行的第一个book替换为books</span></span><br><span class="line">sed -i <span class="string">&#x27;s/book/books/g&#x27;</span> file</span><br><span class="line"></span><br><span class="line"><span class="comment"># 当需要从第N处匹配开始替换时，可以使用 /Ng</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;sksksksksksk&#x27;</span>  sed <span class="string">&#x27;s/sk/SK/3g&#x27;</span></span><br><span class="line">&gt; skskSKSKSKSK</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">&#x27;s/book/books/&#x27;</span> file</span><br><span class="line"></span><br><span class="line"><span class="comment"># -n选项和p命令一起使用表示只打印那些发生替换的行</span></span><br><span class="line">sed -n <span class="string">&#x27;s/test/TEST/p&#x27;</span> file</span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接编辑文件选项-i，会匹配file文件中每一行的第一个book替换为books</span></span><br><span class="line">sed -i <span class="string">&#x27;s/book/books/g&#x27;</span> file</span><br><span class="line"></span><br><span class="line"><span class="comment"># 当需要从第N处匹配开始替换时，可以使用 /Ng</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;sksksksksksk&#x27;</span> | sed <span class="string">&#x27;s/sk/SK/3g&#x27;</span></span><br><span class="line">&gt; skskSKSKSKSK</span><br></pre></td></tr></table></figure>
 
 <p>删除操作：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除空白行</span></span><br><span class="line">sed <span class="string">&#x27;/^$/d&#x27;</span> file</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除文件的第2行</span></span><br><span class="line">sed <span class="string">&#x27;2d&#x27;</span> file</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除文件的第2行到末尾所有行</span></span><br><span class="line">sed <span class="string">&#x27;2,$d&#x27;</span> file</span><br></pre></td></tr></table></figure>
@@ -3166,10 +3170,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-04-16T15:13:56+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-07-01T14:23:42+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2024年4月16日</p>
+    <p>更新于：2024年7月1日</p>
   </a>
 </div>
 
@@ -3195,7 +3199,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.tidnotes.top/post/linux-grep-awk-sed/&title=[Linux]关于grep、awk、sed命令 - 小TiD笔记&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.tidnotes.top/post/linux-grep-awk-sed/&title=[Linux]关于grep、awk、sed命令 - 小TiD笔记&summary=
+对于一些文件字段或文件名等截取或重命名等操作，我们一般会用到正则等方法实现，Linux中的 grep、awk、sed 命令同样能得到上述的效果，本文主要是介绍这三者的区别和用法。
+本文参考文章：linux命令小记（grep、awk、sed）
+"
           
           >
           
@@ -3207,7 +3214,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.tidnotes.top/post/linux-grep-awk-sed/&title=[Linux]关于grep、awk、sed命令 - 小TiD笔记&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.tidnotes.top/post/linux-grep-awk-sed/&title=[Linux]关于grep、awk、sed命令 - 小TiD笔记&summary=
+对于一些文件字段或文件名等截取或重命名等操作，我们一般会用到正则等方法实现，Linux中的 grep、awk、sed 命令同样能得到上述的效果，本文主要是介绍这三者的区别和用法。
+本文参考文章：linux命令小记（grep、awk、sed）
+"
           
           >
           
@@ -3219,7 +3229,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.tidnotes.top/post/linux-grep-awk-sed/&title=[Linux]关于grep、awk、sed命令 - 小TiD笔记&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.tidnotes.top/post/linux-grep-awk-sed/&title=[Linux]关于grep、awk、sed命令 - 小TiD笔记&summary=
+对于一些文件字段或文件名等截取或重命名等操作，我们一般会用到正则等方法实现，Linux中的 grep、awk、sed 命令同样能得到上述的效果，本文主要是介绍这三者的区别和用法。
+本文参考文章：linux命令小记（grep、awk、sed）
+"
           
           >
           
@@ -4003,7 +4016,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"小TiD笔记","url":"https://www.tidnotes.top/","logo":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"TiDra","image":{"@type":"ImageObject","url":"/custom/log.svg"},"url":"https://www.tidnotes.top/","sameAs":["https://github.com/Tidra"],"description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.tidnotes.top/","name":"小TiD笔记"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.tidnotes.top/categories/编程/","name":"编程"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.tidnotes.top/categories/工具/","name":"工具"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.tidnotes.top/categories/编程/Linux/","name":"Linux"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.tidnotes.top/post/linux-grep-awk-sed/","name":"[Linux]关于grep、awk、sed命令"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"小TiD笔记","url":"https://www.tidnotes.top/","keywords":"TiD,小tid,小tid笔记,tidnotes,技术,wordpress,前端,js","description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问","author":{"@type":"Person","name":"TiDra","image":{"@type":"ImageObject","url":"/custom/log.svg"},"url":"https://www.tidnotes.top/","description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问"},"publisher":{"@type":"Organization","name":"小TiD笔记","url":"https://www.tidnotes.top/","logo":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://www.tidnotes.top?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"[Linux]关于grep、awk、sed命令","description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tidnotes.top/post/linux-grep-awk-sed/"},"author":{"@type":"Person","name":"TiDra","image":{"@type":"ImageObject","url":"/custom/log.svg"},"url":"https://www.tidnotes.top/"},"publisher":{"@type":"Organization","name":"小TiD笔记","logo":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}},"url":"https://www.tidnotes.top/post/linux-grep-awk-sed/","wordCount":0,"datePublished":"2020-02-04T14:31:15.000Z","dateModified":"2024-04-16T07:13:56.067Z","articleSection":"编程","keywords":"linux,awk,grep,sed","image":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"小TiD笔记","url":"https://www.tidnotes.top/","logo":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"TiDra","image":{"@type":"ImageObject","url":"/custom/log.svg"},"url":"https://www.tidnotes.top/","sameAs":["https://github.com/Tidra"],"description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.tidnotes.top/","name":"小TiD笔记"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.tidnotes.top/categories/编程/","name":"编程"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.tidnotes.top/categories/工具/","name":"工具"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.tidnotes.top/categories/编程/Linux/","name":"Linux"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.tidnotes.top/post/linux-grep-awk-sed/","name":"[Linux]关于grep、awk、sed命令"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"小TiD笔记","url":"https://www.tidnotes.top/","keywords":"TiD,小tid,小tid笔记,tidnotes,技术,wordpress,前端,js","description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问","author":{"@type":"Person","name":"TiDra","image":{"@type":"ImageObject","url":"/custom/log.svg"},"url":"https://www.tidnotes.top/","description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问"},"publisher":{"@type":"Organization","name":"小TiD笔记","url":"https://www.tidnotes.top/","logo":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://www.tidnotes.top?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"[Linux]关于grep、awk、sed命令","description":"\n对于一些文件字段或文件名等截取或重命名等操作，我们一般会用到正则等方法实现，Linux中的 grep、awk、sed 命令同样能得到上述的效果，本文主要是介绍这三者的区别和用法。\n本文参考文章：linux命令小记（grep、awk、sed）\n","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tidnotes.top/post/linux-grep-awk-sed/"},"author":{"@type":"Person","name":"TiDra","image":{"@type":"ImageObject","url":"/custom/log.svg"},"url":"https://www.tidnotes.top/"},"publisher":{"@type":"Organization","name":"小TiD笔记","logo":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}},"url":"https://www.tidnotes.top/post/linux-grep-awk-sed/","wordCount":122,"datePublished":"2020-02-04T14:31:15.000Z","dateModified":"2024-07-01T06:23:42.172Z","articleSection":"编程","keywords":"linux,awk,grep,sed","image":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}}]</script>
 
 
 

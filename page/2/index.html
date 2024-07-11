@@ -2285,7 +2285,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: "env",
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1717425706474),
+    lastupdate: new Date(1720691778649),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2884,6 +2884,80 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="https://schema.org.cn/Article" >
+  <link itemprop="mainEntityOfPage" href="https://www.tidnotes.top/post/dnspod-ddns/">
+  <span hidden itemprop="publisher" itemscope itemtype="https://schema.org.cn/Organization">
+    <meta itemprop="name" content="小TiD笔记">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="https://schema.org.cn/Post">
+    <meta itemprop="name" content="小TiD笔记">
+    <meta itemprop="description" content="小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="/custom/log.svg">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/post/dnspod-ddns/"  itemprop="url">
+        [Linux]自定义脚本实现DNSPod DDNS
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        OpenWrt 原生的 DDNS 并不支持 DNSPod，所以自行查了一下 DNSPod 的 API，自行写了一个shell脚本。
+本脚本实现了简单的更新功能，体积极小，代码简单，可以用作参考来修改适合自己的脚本，后续我会根据需求再完善一下全部的功能。
+实现步骤脚本首先新建一个shell文件，本文以 ddns_dnspod.sh 为例。将下面的代码复制到新建的shell脚本中。
+ddns_d...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+        <time itemprop="dateCreated datePublished" datetime="2020-06-02T14:55:46+08:00">2020-06-02</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><span class="sep"></span><a class="category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a><span class="sep"></span><a class="category-link" href="/categories/%E7%BC%96%E7%A8%8B/Linux/">Linux</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="https://schema.org.cn/Thing">
+              <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url"><span itemprop="name">编程</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="https://schema.org.cn/Thing">
+              <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url"><span itemprop="name">工具</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="https://schema.org.cn/Thing">
+              <a href="/categories/%E7%BC%96%E7%A8%8B/Linux/" itemprop="url"><span itemprop="name">Linux</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/post/dnspod-ddns/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="https://schema.org.cn/Article" >
   <link itemprop="mainEntityOfPage" href="https://www.tidnotes.top/post/ddns-writelog/">
   <span hidden itemprop="publisher" itemscope itemtype="https://schema.org.cn/Organization">
     <meta itemprop="name" content="小TiD笔记">
@@ -3276,13 +3350,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   <div class='md article-desc' itemprop="articleBody">
     
-      
-        
-对于一些文件字段或文件名等截取或重命名等操作，我们一般会用到正则等方法实现，Linux中的 grep、awk、sed 命令同样能得到上述的效果，本文主要是介绍这三者的区别和用法。
-本文参考文章：linux命令小记（grep、awk、sed）
-
-grep命令grep（global search regular expression(RE) and print out the line，全面搜...
-      
+      <blockquote>
+<p>对于一些文件字段或文件名等截取或重命名等操作，我们一般会用到正则等方法实现，Linux中的 <a href="#grep%E5%91%BD%E4%BB%A4">grep</a>、<a href="#awk%E5%91%BD%E4%BB%A4">awk</a>、<a href="#sed%E5%91%BD%E4%BB%A4">sed</a> 命令同样能得到上述的效果，本文主要是介绍这三者的区别和用法。</p>
+<p>本文参考文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/song_aq/article/details/78527571">linux命令小记（grep、awk、sed）</a></p>
+</blockquote>
     
   </div>
   
@@ -3523,76 +3594,6 @@ grep命令grep（global search regular expression(RE) and print out the line，�
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="https://schema.org.cn/Article" >
-  <link itemprop="mainEntityOfPage" href="https://www.tidnotes.top/post/python-error-sort/">
-  <span hidden itemprop="publisher" itemscope itemtype="https://schema.org.cn/Organization">
-    <meta itemprop="name" content="小TiD笔记">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="https://schema.org.cn/Post">
-    <meta itemprop="name" content="小TiD笔记">
-    <meta itemprop="description" content="小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="/custom/log.svg">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/post/python-error-sort/"  itemprop="url">
-        [Python]关于‘DataFrame’对象没有‘sort’属性
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>最近在阅读《Python数据分析与挖掘实战》一书，其中发现不少内容没有更新，导致提供的代码直接运行会出现错误。</p>
-<p>下面是第8章《中医证型关联规则挖掘》的 “<strong>代码清单8-1 数据聚类离散化代码</strong>” ：</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2019-11-24T21:18:37+08:00">2019-11-24</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E7%BC%96%E7%A8%8B/">编程</a><span class="sep"></span><a class="category-link" href="/categories/%E7%BC%96%E7%A8%8B/Python/">Python</a><span class="sep"></span><a class="category-link" href="/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">问题解决</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="https://schema.org.cn/Thing">
-              <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url"><span itemprop="name">编程</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="https://schema.org.cn/Thing">
-              <a href="/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" itemprop="url"><span itemprop="name">问题解决</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="https://schema.org.cn/Thing">
-              <a href="/categories/%E7%BC%96%E7%A8%8B/Python/" itemprop="url"><span itemprop="name">Python</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/post/python-error-sort/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -3681,7 +3682,7 @@ grep命令grep（global search regular expression(RE) and print out the line，�
           
         
           
-            <a href="https://main.tidnotes.top"
+            <a href="https://www.tidnotes.top"
               class="social fa-solid fa-house-flag flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
@@ -3732,7 +3733,7 @@ grep命令grep（global search regular expression(RE) and print out the line，�
           <li><a class="flat-box"
             title="/categories/%E5%B7%A5%E5%85%B7/" href="/categories/%E5%B7%A5%E5%85%B7/"
             active-action="action-categoriesE5B7A5E585B7"
-            ><div class='name'>工具</div><div class='badge'>(13)</div></a></li>
+            ><div class='name'>工具</div><div class='badge'>(14)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E7%BC%96%E7%A8%8B/" href="/categories/%E7%BC%96%E7%A8%8B/"
@@ -3790,7 +3791,7 @@ grep命令grep（global search regular expression(RE) and print out the line，�
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>34 篇</div>
+          <div>35 篇</div>
         </div>
       
 
@@ -3805,7 +3806,7 @@ grep命令grep（global search regular expression(RE) and print out the line，�
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>41.2k 字</div>
+          <div>42.5k 字</div>
         </div>
       
 
@@ -3833,7 +3834,7 @@ grep命令grep（global search regular expression(RE) and print out the line，�
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2024-06-03 日</div>
+          <div id="last-update-show">2024-07-11 日</div>
         </div>
       
     </div>
