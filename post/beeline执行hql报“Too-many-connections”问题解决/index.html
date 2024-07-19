@@ -5,8 +5,8 @@
   <meta name="Volantis" content="6.0.0-alpha.1">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://www.tidnotes.top/tags/jekyll/"/>
+  
+  <link rel="canonical" href="https://www.tidnotes.top/post/beeline执行hql报“too-many-connections”问题解决/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -37,19 +37,22 @@
   <!-- feed -->
       <link rel="alternate" href="/atom.xml" title="小TiD笔记" type="application/atom+xml">
   <!-- 页面元数据 -->
-  <title>标签：Jekyll - 小TiD笔记</title>
-  <meta name="keywords" content="TiD,小tid,小tid笔记,tidnotes,技术,wordpress,前端,js">
-  <meta desc name="description" content="小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问 - TiDra - 小TiD笔记">
+  <title>beeline执行hql报“Too many connections”问题解决 - 小TiD笔记</title>
+  <meta name="keywords" content="hive,beeline,haproxy,connections,mysql,HiveServer2,TiD,小tid,小tid笔记,tidnotes,技术,wordpress,前端,js">
+  <meta desc name="description" content="出现问题：使用Hive Beeline执行hql语句时，经常报“Too many connections”错误。
+经检查，一般会出现该问题的主是3种问题：MySQL配置问题、HiveServer2配置问题、haproxy配置问题。 - TiDra - 小TiD笔记">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="小TiD笔记">
-<meta property="og:url" content="https://www.tidnotes.top/tags/Jekyll/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="beeline执行hql报“Too many connections”问题解决">
+<meta property="og:url" content="https://www.tidnotes.top/post/beeline%E6%89%A7%E8%A1%8Chql%E6%8A%A5%E2%80%9CToo-many-connections%E2%80%9D%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/index.html">
 <meta property="og:site_name" content="小TiD笔记">
-<meta property="og:description" content="小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问">
+<meta property="og:description" content="出现问题：使用Hive Beeline执行hql语句时，经常报“Too many connections”错误。 经检查，一般会出现该问题的主是3种问题：MySQL配置问题、HiveServer2配置问题、haproxy配置问题。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.tidnotes.top/custom/log.svg">
+<meta property="article:published_time" content="2024-07-16T01:33:09.000Z">
+<meta property="article:modified_time" content="2024-07-16T01:33:09.000Z">
 <meta property="article:author" content="TiDra">
-<meta property="article:tag" content="TiD,小tid,小tid笔记,tidnotes,技术,wordpress,前端,js">
+<meta property="article:tag" content="hive">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.tidnotes.top/custom/log.svg">
   <style>
@@ -2277,7 +2280,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2875,25 +2878,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
-  
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="https://schema.org.cn/Article" >
-  <link itemprop="mainEntityOfPage" href="https://www.tidnotes.top/post/github建站以及wordpress文章迁移/">
+  <article itemscope itemtype="https://schema.org.cn/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://www.tidnotes.top/post/beeline执行hql报“Too-many-connections”问题解决/">
   <span hidden itemprop="publisher" itemscope itemtype="https://schema.org.cn/Organization">
     <meta itemprop="name" content="小TiD笔记">
   </span>
@@ -2902,78 +2889,326 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="/custom/log.svg">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/post/github%E5%BB%BA%E7%AB%99%E4%BB%A5%E5%8F%8Awordpress%E6%96%87%E7%AB%A0%E8%BF%81%E7%A7%BB/"  itemprop="url">
-        GitHub建站以及WordPress文章迁移
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
     
-      
+    
+      <h1 class="title" itemprop="name headline">
+        beeline执行hql报“Too many connections”问题解决
+      </h1>
+      <div class='new-meta-box'>
         
-本文主要介绍利用github搭建个人静态网站，以及怎样将WordPress上的文章转移到github上。
-目前，GitHub Pages只支持静态博客（html，css，js），不支持服务端（php，physon），利用Jekyll生成静态网页是个人网站不错的选择。对于小型的博客之类的网站，利用GitHub建站还是很好的，而且GitHub支持HTTPS协议，也可以绑定自有域名。
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="https://schema.org.cn/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="/custom/avatar.jpg" class="lazyload" data-srcset="/custom/avatar.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">TiDra</p>
+  </a>
+</div>
 
-一时兴起...
-      
+          
+        
+          
+            
+  
+  
+  
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">问题解决</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="https://schema.org.cn/Thing">
+        <a href="/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" itemprop="url"><span itemprop="name">问题解决</span></a>
+      </span>
     
   </div>
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2019-09-17T22:22:01+08:00">2019-09-17</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="sep"></span><a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/WordPress%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">WordPress使用技巧</a><span class="sep"></span><a class="category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="https://schema.org.cn/Thing">
-              <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url"><span itemprop="name">前端</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="https://schema.org.cn/Thing">
-              <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url"><span itemprop="name">工具</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="https://schema.org.cn/Thing">
-              <a href="/categories/%E5%89%8D%E7%AB%AF/WordPress%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" itemprop="url"><span itemprop="name">WordPress使用技巧</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/post/github%E5%BB%BA%E7%AB%99%E4%BB%A5%E5%8F%8Awordpress%E6%96%87%E7%AB%A0%E8%BF%81%E7%A7%BB/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
 
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-07-16T09:33:09+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2024年7月16日</p>
+  </a>
 </div>
 
+          
+        
+          
+            
+
+
+<div class="new-meta-item browse">
+  <a class='notlink'>
+    <p>
+      <i class="fa-solid fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="twikoo_visitors">
+        <i class="fa-solid fa-loader fa-spin fa-fw" aria-hidden="true"></i>
+      </span>
+        
+      <span>次浏览</span>
+    </p>
+  </a>
+</div>
+
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：621 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：2 分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <p>出现问题：使用Hive Beeline执行hql语句时，经常报“Too many connections”错误。</p>
+<p>经检查，一般会出现该问题的主是3种问题：MySQL配置问题、HiveServer2配置问题、haproxy配置问题。</p>
+<span id="more"></span>
+
+<p>下面主要介绍下三种问题的解决方案。</p>
+<h2 id="MySQL配置问题"><a href="#MySQL配置问题" class="headerlink" title="MySQL配置问题"></a>MySQL配置问题</h2><p><strong>可能原因：</strong></p>
+<ol>
+<li>同时执行的hql语句过多，hive使用的元数据库使用的MySQL配置连接数不足</li>
+<li>有大量MySQL连接未释放</li>
+<li>执行的查询语句太复杂，查询元数据超时（可能性最小）</li>
+</ol>
+<p><strong>解决</strong></p>
+<ol>
+<li><code>/etc/my.cnf</code> 文件<figure class="highlight ini"><figcaption><span>/etc/my.cnf</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 增加以下内容</span></span><br><span class="line"><span class="section">[mysqld]</span></span><br><span class="line"><span class="comment"># 最大连接数</span></span><br><span class="line"><span class="attr">max_connections</span>=<span class="number">1000</span></span><br><span class="line"><span class="comment"># 非交互式连接（客户端）最大空闲时长（s）</span></span><br><span class="line"><span class="attr">interactive_timeout</span>=<span class="number">1800</span></span><br><span class="line"><span class="comment"># 交互式连接（jdbc）最大空闲时长（s）</span></span><br><span class="line"><span class="attr">wait_timeout</span>=<span class="number">1800</span></span><br></pre></td></tr></table></figure></li>
+<li>重启MySQL服务<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mysqld</span><br></pre></td></tr></table></figure></li>
+</ol>
+<blockquote>
+<p><strong>mysql连接状态相关查询语句</strong></p>
+<ol>
+<li>查看mysql连接情况<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> processlist;</span><br></pre></td></tr></table></figure></li>
+<li>mysql长连接默认检测时间<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> variables <span class="keyword">like</span> <span class="string">&#x27;wait_timeout&#x27;</span>;</span><br><span class="line"><span class="keyword">show</span> variables <span class="keyword">like</span> <span class="string">&#x27;interactive_timeout&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</blockquote>
+<h2 id="HiveServer2配置问题"><a href="#HiveServer2配置问题" class="headerlink" title="HiveServer2配置问题"></a>HiveServer2配置问题</h2><p><strong>可能原因：</strong></p>
+<ol>
+<li>hive允许的连接数过少</li>
+<li>在运行的hive连接过多且不释放</li>
+</ol>
+<p><strong>解决</strong></p>
+<ul>
+<li>如果是hive连接过多且不释放，需要针对单个作业进行分析或直接kill掉占用过多的作业；</li>
+<li>如果是hive允许的连接数过少，可以修改HiveServer2的配置，增加连接数，_但该需要根据实际情况去配置，一味增加最大线程数可以会加大服务器压力_，但实际上并没有解决问题。</li>
+</ul>
+<p>以下为HS2的修改：</p>
+<ol>
+<li>修改并保存 <code>hive-site.xml</code>，或在CM中找到HS2设置修改<figure class="highlight xml"><figcaption><span>hive-site.xml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">name</span>&gt;</span>hive.server2.thrift.max.worker.threads<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">value</span>&gt;</span>600<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">description</span>&gt;</span>Maximum number of Thrift worker threads<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>重启HS2<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 停止</span></span><br><span class="line">hive --service hiveserver2 --stop</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证启停</span></span><br><span class="line">jps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动</span></span><br><span class="line">hive --service hiveserver2 --start</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="haproxy配置问题"><a href="#haproxy配置问题" class="headerlink" title="haproxy配置问题"></a>haproxy配置问题</h2><p><strong>可能原因：</strong><br>使用HA连接hive，HA的配置最大连接数过少、等待时间过短导致</p>
+<p><strong>解决</strong></p>
+<ol>
+<li>在 <code>/etc/haproxy/haproxy.cfg</code> 新增或修改（根据实际修改）<figure class="highlight properties"><figcaption><span>/etc/haproxy/haproxy.cfg</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">defaults</span></span><br><span class="line">    <span class="attr">timeout</span> <span class="string">http-request    1m   #默认http请求超时时间</span></span><br><span class="line">    <span class="attr">timeout</span> <span class="string">queue           10m  #默认队列超时时间</span></span><br><span class="line">    <span class="attr">timeout</span> <span class="string">connect         10m  #默认连接超时时间</span></span><br><span class="line">    <span class="attr">timeout</span> <span class="string">client          10m  #默认客户端超时时间</span></span><br><span class="line">    <span class="attr">timeout</span> <span class="string">server          10m  #默认服务器超时时间</span></span><br><span class="line">    <span class="attr">timeout</span> <span class="string">http-keep-alive 30s  #默认持久连接超时时间</span></span><br><span class="line">    <span class="attr">timeout</span> <span class="string">check           1m   #设置超时检查超时时间</span></span><br><span class="line">    <span class="attr">maxconn</span>                 <span class="string">3000 #设置最大连接数</span></span><br></pre></td></tr></table></figure></li>
+<li>重启 haproxy<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart haproxy</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+        
+          <div class='copyright'>
+            <blockquote>
+              
+                
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                
+              
+                
+                  <p>本文永久链接是：<a href="https://www.tidnotes.top/post/beeline执行hql报“Too-many-connections”问题解决/">https://www.tidnotes.top/post/beeline执行hql报“Too-many-connections”问题解决/</a></p>
+                
+              
+            </blockquote>
           </div>
         
       
-    
-  </section>
+      <!-- 打赏组件 -->
+      
+    </div>
+  
   
     
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-07-16T09:33:09+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2024年7月16日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/hive/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>hive</p></a></div>
+  <span hidden itemprop="keywords">hive</span>
   
 
 
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.tidnotes.top/post/beeline%E6%89%A7%E8%A1%8Chql%E6%8A%A5%E2%80%9CToo-many-connections%E2%80%9D%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/&title=beeline执行hql报“Too many connections”问题解决 - 小TiD笔记&summary=出现问题：使用Hive Beeline执行hql语句时，经常报“Too many connections”错误。
+经检查，一般会出现该问题的主是3种问题：MySQL配置问题、HiveServer2配置问题、haproxy配置问题。"
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.tidnotes.top/post/beeline%E6%89%A7%E8%A1%8Chql%E6%8A%A5%E2%80%9CToo-many-connections%E2%80%9D%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/&title=beeline执行hql报“Too many connections”问题解决 - 小TiD笔记&summary=出现问题：使用Hive Beeline执行hql语句时，经常报“Too many connections”错误。
+经检查，一般会出现该问题的主是3种问题：MySQL配置问题、HiveServer2配置问题、haproxy配置问题。"
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.tidnotes.top/post/beeline%E6%89%A7%E8%A1%8Chql%E6%8A%A5%E2%80%9CToo-many-connections%E2%80%9D%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/&title=beeline执行hql报“Too many connections”问题解决 - 小TiD笔记&summary=出现问题：使用Hive Beeline执行hql语句时，经常报“Too many connections”错误。
+经检查，一般会出现该问题的主是3种问题：MySQL配置问题、HiveServer2配置问题、haproxy配置问题。"
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
   
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/post/Linux-ftp%E7%94%A8%E6%88%B7%E7%BA%A7%E9%99%90%E5%88%B6ip%E4%BB%A5%E5%8F%8A%E6%A0%B9%E7%9B%AE%E5%BD%95/'>
+          <p class='title'>[Linux]ftp用户级限制ip以及根目录<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>搭建FTP服务器，并限制不同用户的根目录和限制不同用户限定ip登录。
+因限制ip必须要用系统用户，故本文不涉及虚拟用户的使用以及相关配置。
+
+
+安装ftp服务12345# centosyum i...</p>
+        </a>
+      
+    </div>
+  
+  <!-- 文章推荐 -->
+  
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/post/beeline%E6%89%A7%E8%A1%8Chql%E6%8A%A5%E2%80%9CToo-many-connections%E2%80%9D%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/index.html#comments">
+    </span>
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
+    
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="https://schema.org.cn/WPSideBar">
   
@@ -2982,259 +3217,31 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       
-<section class="widget blogger desktop mobile ">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='/custom/avatar.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>TiDra</h2>
-        
-        
-        
-          <p><span id="jinrishici-sentence">小TiD笔记</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fa-solid fa-square-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:admin@tidnotes.top"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/Tidra/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://www.tidnotes.top"
-              class="social fa-solid fa-house-flag flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop">
-    
-  <header>
-    
-      <a href='/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%89%8D%E7%AB%AF/" href="/categories/%E5%89%8D%E7%AB%AF/"
-            active-action="action-categoriesE5898DE7ABAF"
-            ><div class='name'>前端</div><div class='badge'>(18)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%89%8D%E7%AB%AF/Hexo%E7%9B%B8%E5%85%B3/" href="/categories/%E5%89%8D%E7%AB%AF/Hexo%E7%9B%B8%E5%85%B3/"
-            active-action="action-categoriesE5898DE7ABAFHexoE79BB8E585B3"
-            ><div class='name'>Hexo相关</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%89%8D%E7%AB%AF/WordPress%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" href="/categories/%E5%89%8D%E7%AB%AF/WordPress%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/"
-            active-action="action-categoriesE5898DE7ABAFWordPressE4BDBFE794A8E68A80E5B7A7"
-            ><div class='name'>WordPress使用技巧</div><div class='badge'>(11)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%B7%A5%E5%85%B7/" href="/categories/%E5%B7%A5%E5%85%B7/"
-            active-action="action-categoriesE5B7A5E585B7"
-            ><div class='name'>工具</div><div class='badge'>(14)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%BC%96%E7%A8%8B/" href="/categories/%E7%BC%96%E7%A8%8B/"
-            active-action="action-categoriesE7BC96E7A88B"
-            ><div class='name'>编程</div><div class='badge'>(15)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E7%BC%96%E7%A8%8B/JavaScript/" href="/categories/%E7%BC%96%E7%A8%8B/JavaScript/"
-            active-action="action-categoriesE7BC96E7A88BJavaScript"
-            ><div class='name'>JavaScript</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E7%BC%96%E7%A8%8B/Linux/" href="/categories/%E7%BC%96%E7%A8%8B/Linux/"
-            active-action="action-categoriesE7BC96E7A88BLinux"
-            ><div class='name'>Linux</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E7%BC%96%E7%A8%8B/Python/" href="/categories/%E7%BC%96%E7%A8%8B/Python/"
-            active-action="action-categoriesE7BC96E7A88BPython"
-            ><div class='name'>Python</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E7%BC%96%E7%A8%8B/SQL/" href="/categories/%E7%BC%96%E7%A8%8B/SQL/"
-            active-action="action-categoriesE7BC96E7A88BSQL"
-            ><div class='name'>SQL</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" href="/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"
-            active-action="action-categoriesE997AEE9A298E8A7A3E586B3"
-            ><div class='name'>问题解决</div><div class='badge'>(6)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget desktop">
-  
-  <header>
-    
-      <i class="fa-solid fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>36 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count"></div>
-        </div>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>43.1k 字</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          <div>
-            <span id="busuanzi_value_site_uv">
-              <i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i>
-            </span> 
-            人
-          </div>
-        </div>
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          <div>
-            <span id="busuanzi_value_site_pv">
-              <i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i>
-            </span> 
-            次
-          </div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          <div id="last-update-show">2024-07-19 日</div>
-        </div>
-      
-    </div>
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-
-  <section class='widget desktop mobile music'>
-    
-
-    <div class='content'>
-      
-
-  
-    
-      <meting-js
-        theme='#1BCDFC'
-        autoplay='false'
-        volume='0.7'
-        loop='all'
-        order='list'
-        fixed='false'
-        list-max-height='320px'
-        server='netease'
-        type='playlist'
-        id='3175833810'
-        list-folded='true'>
-      </meting-js>
-    
-  
-
-
-    </div>
-  </section>
-
-
     
   
 
 
 <div class="widget-sticky">
+
+  
+  
+
+
+<section class="widget toc-wrapper desktop mobile" id="toc-div" >
+  
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98"><span class="toc-text">MySQL配置问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HiveServer2%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98"><span class="toc-text">HiveServer2配置问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#haproxy%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98"><span class="toc-text">haproxy配置问题</span></a></li></ol>
+  </div>
+</section>
+
+  
 
 </div>
 
@@ -3242,6 +3249,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   <!-- Custom Files side end -->
 </aside>
+
 
 
         </div>
@@ -3908,7 +3916,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"小TiD笔记","url":"https://www.tidnotes.top/","logo":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"TiDra","image":{"@type":"ImageObject","url":"/custom/log.svg"},"url":"https://www.tidnotes.top/","sameAs":["https://github.com/Tidra"],"description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.tidnotes.top/","name":"小TiD笔记"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.tidnotes.top/tags/Jekyll/","name":"Jekyll"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"小TiD笔记","url":"https://www.tidnotes.top/","keywords":"TiD,小tid,小tid笔记,tidnotes,技术,wordpress,前端,js","description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问","author":{"@type":"Person","name":"TiDra","image":{"@type":"ImageObject","url":"/custom/log.svg"},"url":"https://www.tidnotes.top/","description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问"},"publisher":{"@type":"Organization","name":"小TiD笔记","url":"https://www.tidnotes.top/","logo":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://www.tidnotes.top?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"TiDra","image":{"@type":"ImageObject","url":"/custom/log.svg"},"url":"https://www.tidnotes.top/"},"publisher":{"@type":"Organization","name":"小TiD笔记","logo":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"小TiD笔记","url":"https://www.tidnotes.top/","logo":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"TiDra","image":{"@type":"ImageObject","url":"/custom/log.svg"},"url":"https://www.tidnotes.top/","sameAs":["https://github.com/Tidra"],"description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.tidnotes.top/","name":"小TiD笔记"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.tidnotes.top/categories/问题解决/","name":"问题解决"}},{"@type":"ListItem","position":3,"item":{"@id":"https://www.tidnotes.top/post/beeline执行hql报“Too-many-connections”问题解决/","name":"beeline执行hql报“Too many connections”问题解决"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"小TiD笔记","url":"https://www.tidnotes.top/","keywords":"TiD,小tid,小tid笔记,tidnotes,技术,wordpress,前端,js","description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问","author":{"@type":"Person","name":"TiDra","image":{"@type":"ImageObject","url":"/custom/log.svg"},"url":"https://www.tidnotes.top/","description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问"},"publisher":{"@type":"Organization","name":"小TiD笔记","url":"https://www.tidnotes.top/","logo":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://www.tidnotes.top?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","headline":"beeline执行hql报“Too many connections”问题解决","description":"出现问题：使用Hive Beeline执行hql语句时，经常报“Too many connections”错误。\n经检查，一般会出现该问题的主是3种问题：MySQL配置问题、HiveServer2配置问题、haproxy配置问题。","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.tidnotes.top/post/beeline%E6%89%A7%E8%A1%8Chql%E6%8A%A5%E2%80%9CToo-many-connections%E2%80%9D%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"},"author":{"@type":"Person","name":"TiDra","image":{"@type":"ImageObject","url":"/custom/log.svg"},"url":"https://www.tidnotes.top/"},"publisher":{"@type":"Organization","name":"小TiD笔记","logo":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}},"url":"https://www.tidnotes.top/post/beeline%E6%89%A7%E8%A1%8Chql%E6%8A%A5%E2%80%9CToo-many-connections%E2%80%9D%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/","wordCount":115,"datePublished":"2024-07-16T01:33:09.000Z","dateModified":"2024-07-16T01:33:09.000Z","articleSection":"问题解决","keywords":"hive","image":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}}]</script>
 
 
 

@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://www.tidnotes.top/tags/jekyll/"/>
+  <link rel="canonical" href="https://www.tidnotes.top/tags/hive/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -37,13 +37,13 @@
   <!-- feed -->
       <link rel="alternate" href="/atom.xml" title="小TiD笔记" type="application/atom+xml">
   <!-- 页面元数据 -->
-  <title>标签：Jekyll - 小TiD笔记</title>
+  <title>标签：hive - 小TiD笔记</title>
   <meta name="keywords" content="TiD,小tid,小tid笔记,tidnotes,技术,wordpress,前端,js">
   <meta desc name="description" content="小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问 - TiDra - 小TiD笔记">
   
 <meta property="og:type" content="website">
 <meta property="og:title" content="小TiD笔记">
-<meta property="og:url" content="https://www.tidnotes.top/tags/Jekyll/index.html">
+<meta property="og:url" content="https://www.tidnotes.top/tags/hive/index.html">
 <meta property="og:site_name" content="小TiD笔记">
 <meta property="og:description" content="小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问">
 <meta property="og:locale" content="zh_CN">
@@ -2893,7 +2893,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="https://schema.org.cn/Article" >
-  <link itemprop="mainEntityOfPage" href="https://www.tidnotes.top/post/github建站以及wordpress文章迁移/">
+  <link itemprop="mainEntityOfPage" href="https://www.tidnotes.top/post/beeline执行hql报“Too-many-connections”问题解决/">
   <span hidden itemprop="publisher" itemscope itemtype="https://schema.org.cn/Organization">
     <meta itemprop="name" content="小TiD笔记">
   </span>
@@ -2911,48 +2911,35 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/post/github%E5%BB%BA%E7%AB%99%E4%BB%A5%E5%8F%8Awordpress%E6%96%87%E7%AB%A0%E8%BF%81%E7%A7%BB/"  itemprop="url">
-        GitHub建站以及WordPress文章迁移
+      <a href="/post/beeline%E6%89%A7%E8%A1%8Chql%E6%8A%A5%E2%80%9CToo-many-connections%E2%80%9D%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"  itemprop="url">
+        beeline执行hql报“Too many connections”问题解决
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
-      
-        
-本文主要介绍利用github搭建个人静态网站，以及怎样将WordPress上的文章转移到github上。
-目前，GitHub Pages只支持静态博客（html，css，js），不支持服务端（php，physon），利用Jekyll生成静态网页是个人网站不错的选择。对于小型的博客之类的网站，利用GitHub建站还是很好的，而且GitHub支持HTTPS协议，也可以绑定自有域名。
-
-一时兴起...
-      
+      <p>出现问题：使用Hive Beeline执行hql语句时，经常报“Too many connections”错误。</p>
+<p>经检查，一般会出现该问题的主是3种问题：MySQL配置问题、HiveServer2配置问题、haproxy配置问题。</p>
     
   </div>
   
     <div class='meta-v3' line_style='solid'>
       <div>
         
-        <time itemprop="dateCreated datePublished" datetime="2019-09-17T22:22:01+08:00">2019-09-17</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-07-16T09:33:09+08:00">2024-07-16</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="sep"></span><a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/WordPress%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">WordPress使用技巧</a><span class="sep"></span><a class="category-link" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a>
+          <a class="category-link" href="/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/">问题解决</a>
           
             <span hidden itemprop="about" itemscope itemtype="https://schema.org.cn/Thing">
-              <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url"><span itemprop="name">前端</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="https://schema.org.cn/Thing">
-              <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url"><span itemprop="name">工具</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="https://schema.org.cn/Thing">
-              <a href="/categories/%E5%89%8D%E7%AB%AF/WordPress%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" itemprop="url"><span itemprop="name">WordPress使用技巧</span></a>
+              <a href="/categories/%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" itemprop="url"><span itemprop="name">问题解决</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/post/github%E5%BB%BA%E7%AB%99%E4%BB%A5%E5%8F%8Awordpress%E6%96%87%E7%AB%A0%E8%BF%81%E7%A7%BB/' itemprop="url">
+          <a class='readmore' href='/post/beeline%E6%89%A7%E8%A1%8Chql%E6%8A%A5%E2%80%9CToo-many-connections%E2%80%9D%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3908,7 +3895,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"小TiD笔记","url":"https://www.tidnotes.top/","logo":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"TiDra","image":{"@type":"ImageObject","url":"/custom/log.svg"},"url":"https://www.tidnotes.top/","sameAs":["https://github.com/Tidra"],"description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.tidnotes.top/","name":"小TiD笔记"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.tidnotes.top/tags/Jekyll/","name":"Jekyll"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"小TiD笔记","url":"https://www.tidnotes.top/","keywords":"TiD,小tid,小tid笔记,tidnotes,技术,wordpress,前端,js","description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问","author":{"@type":"Person","name":"TiDra","image":{"@type":"ImageObject","url":"/custom/log.svg"},"url":"https://www.tidnotes.top/","description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问"},"publisher":{"@type":"Organization","name":"小TiD笔记","url":"https://www.tidnotes.top/","logo":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://www.tidnotes.top?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"TiDra","image":{"@type":"ImageObject","url":"/custom/log.svg"},"url":"https://www.tidnotes.top/"},"publisher":{"@type":"Organization","name":"小TiD笔记","logo":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"https://schema.org.cn","@type":"Organization","name":"小TiD笔记","url":"https://www.tidnotes.top/","logo":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}},{"@context":"https://schema.org.cn","@type":"Person","name":"TiDra","image":{"@type":"ImageObject","url":"/custom/log.svg"},"url":"https://www.tidnotes.top/","sameAs":["https://github.com/Tidra"],"description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问"},{"@context":"https://schema.org.cn","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://www.tidnotes.top/","name":"小TiD笔记"}},{"@type":"ListItem","position":2,"item":{"@id":"https://www.tidnotes.top/tags/hive/","name":"hive"}}]},{"@context":"https://schema.org.cn","@type":"WebSite","name":"小TiD笔记","url":"https://www.tidnotes.top/","keywords":"TiD,小tid,小tid笔记,tidnotes,技术,wordpress,前端,js","description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问","author":{"@type":"Person","name":"TiDra","image":{"@type":"ImageObject","url":"/custom/log.svg"},"url":"https://www.tidnotes.top/","description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问"},"publisher":{"@type":"Organization","name":"小TiD笔记","url":"https://www.tidnotes.top/","logo":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://www.tidnotes.top?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org.cn","@type":"BlogPosting","description":"小tid笔记，记录各种技术性文章，为大家提供简单、有效的、易上手的各种技术和便捷功能，有问题随时欢迎留言提问","inLanguage":["zh-CN","en","zh-HK","zh-TW","default"],"mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"TiDra","image":{"@type":"ImageObject","url":"/custom/log.svg"},"url":"https://www.tidnotes.top/"},"publisher":{"@type":"Organization","name":"小TiD笔记","logo":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"/custom/log.svg","width":192,"height":192}}]</script>
 
 
 
